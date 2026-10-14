@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charts · Tennis Intelligence</title>
+<meta name="description" content="ATP and WTA match-charting scatters, with the formula for each axis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="wrap charts">
+  <header>
+    <svg class="court" viewBox="0 0 54 30" aria-hidden="true">
+      <rect x="1" y="1" width="52" height="28"></rect>
+      <line x1="27" y1="1" x2="27" y2="29"></line>
+      <rect x="13" y="6" width="28" height="18"></rect>
+      <line x1="13" y1="15" x2="41" y2="15"></line>
+    </svg>
+    <b>Tennis Intelligence</b>
+  </header>
+  <p><a class="back" href="../">Home</a></p>
+  <h1>Charts</h1>
+  <p class="lede">Each dot is a player. Save downloads the chart with the axis formulas under it.</p>
+  <h2 class="section-title">ATP</h2>
+  <div id="atp"></div>
+  <h2 class="section-title">WTA</h2>
+  <p class="note" id="wta-lede"></p>
+  <div id="wta"></div>
+  <p class="credit">Charting data: <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Jeff Sackmann Match Charting Project</a>. Not official ATP or WTA tracking. Forehand speed also uses published TennisViz and GIG Hawk-Eye averages.</p>
+</div>
+<script src="../assets/charts.js"></script>
+</body>
+</html>

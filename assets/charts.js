@@ -354,6 +354,34 @@ function mount(id) {
   });
   article.querySelector(".save").addEventListener("click", () => saveChart(id, article));
 }
+function drawLogo(ctx, width, height) {
+  const label = "Tennis Intelligence";
+  ctx.save();
+  ctx.font = "700 22px Syne, sans-serif";
+  ctx.fillStyle = "#14241c";
+  ctx.textBaseline = "middle";
+  const textW = ctx.measureText(label).width;
+  const courtW = 62;
+  const gap = 12;
+  const right = width - 28;
+  const midY = height - 32;
+  const courtX = right - courtW;
+  const textX = courtX - gap - textW;
+  ctx.fillText(label, textX, midY);
+  ctx.translate(courtX, midY - 17);
+  ctx.scale(62 / 54, 62 / 54);
+  ctx.strokeStyle = "#14241c";
+  ctx.lineWidth = 1.6;
+  ctx.strokeRect(1, 1, 52, 28);
+  ctx.beginPath();
+  ctx.moveTo(27, 1);
+  ctx.lineTo(27, 29);
+  ctx.moveTo(13, 15);
+  ctx.lineTo(41, 15);
+  ctx.stroke();
+  ctx.strokeRect(13, 6, 28, 18);
+  ctx.restore();
+}
 function shareNotes(spec) {
   const labels = { "Horizontal axis": "X", "Vertical axis": "Y", "Point size": "Size" };
   return spec.defs.map(([term, text]) => `${labels[term] || term} · ${text}`);
@@ -407,11 +435,12 @@ async function saveChart(id, article) {
       wrapText(measure, line, width - 56).forEach((part) => lines.push(part));
     });
     const lineH = 26;
-    const notesH = 12 + lines.length * lineH + 20;
+    const notesH = 12 + lines.length * lineH + 8;
+    const logoH = 64;
     const captionH = 64;
     const canvas = document.createElement("canvas");
     canvas.width = width;
-    canvas.height = captionH + chartH + notesH;
+    canvas.height = captionH + chartH + notesH + logoH;
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -422,6 +451,7 @@ async function saveChart(id, article) {
     ctx.fillStyle = "#3d5246";
     ctx.textBaseline = "top";
     lines.forEach((line, i) => ctx.fillText(line, 28, captionH + chartH + 12 + i * lineH));
+    drawLogo(ctx, width, canvas.height);
     ctx.fillStyle = "#14241c";
     ctx.font = "600 28px Syne, sans-serif";
     ctx.textBaseline = "middle";

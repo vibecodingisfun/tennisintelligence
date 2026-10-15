@@ -364,7 +364,7 @@ function drawLogo(ctx, width, height) {
   const courtW = 62;
   const gap = 12;
   const right = width - 28;
-  const midY = height - 32;
+  const midY = height - 28;
   const courtX = right - courtW;
   const textX = courtX - gap - textW;
   ctx.fillText(label, textX, midY);
@@ -436,7 +436,7 @@ async function saveChart(id, article) {
     });
     const lineH = 26;
     const notesH = 12 + lines.length * lineH + 8;
-    const logoH = 64;
+    const logoH = 40;
     const captionH = 64;
     const canvas = document.createElement("canvas");
     canvas.width = width;

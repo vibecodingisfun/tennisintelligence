@@ -24,6 +24,33 @@
   <p><a class="back" href="../">Home</a></p>
   <h1>Charts</h1>
   <p class="lede">Each dot is a player. Save downloads the chart with the axis formulas under it.</p>
+  <form class="finder" id="finder">
+    <label for="player">Player</label>
+    <div class="line">
+      <input id="player" name="player" type="search" list="player-names" placeholder="Charting name" autocomplete="off" enterkeyhint="search">
+      <button type="submit">Show</button>
+    </div>
+    <datalist id="player-names"></datalist>
+    <p class="finder-note" id="finder-note" role="status"></p>
+  </form>
+  <nav class="index" aria-label="Charts">
+    <h2>ATP</h2>
+    <ul>
+      <li><a href="#chart-drop">Drop shots</a></li>
+      <li><a href="#chart-fh">Forehands</a></li>
+      <li><a href="#chart-fhpts">Forehand points</a></li>
+      <li><a href="#chart-bh">Backhand quality</a></li>
+      <li><a href="#chart-serve">Serve quality</a></li>
+      <li><a href="#chart-first">First serve</a></li>
+    </ul>
+    <h2>WTA</h2>
+    <ul>
+      <li><a href="#chart-wtaFh">WTA forehand points</a></li>
+      <li><a href="#chart-wtaBh">WTA backhand quality</a></li>
+      <li><a href="#chart-wtaSv">WTA serve quality</a></li>
+      <li><a href="#chart-wtaFs">WTA first serve</a></li>
+    </ul>
+  </nav>
   <h2 class="section-title">ATP</h2>
   <div id="atp"></div>
   <h2 class="section-title">WTA</h2>

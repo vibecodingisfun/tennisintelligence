@@ -471,6 +471,73 @@ async function saveChart(id, article) {
     button.disabled = false;
   }
 }
+function chartingNames() {
+  const names = new Set();
+  Object.values(state).forEach((bucket) => bucket.players.forEach((p) => names.add(p.name)));
+  return [...names].sort((a, b) => a.localeCompare(b, "en"));
+}
+function findChartingName(query) {
+  const q = String(query || "").trim().replace(/\s+/g, " ").toLowerCase();
+  if (!q) return { empty: true };
+  const names = chartingNames();
+  const fold = (name) => name.trim().replace(/\s+/g, " ").toLowerCase();
+  const exact = names.filter((name) => fold(name) === q);
+  if (exact.length === 1) return { name: exact[0] };
+  if (exact.length > 1) return { many: true };
+  const lasts = [...new Set(names.filter((name) => lastName(name).toLowerCase() === q))];
+  if (lasts.length === 1) return { name: lasts[0] };
+  if (lasts.length > 1) return { many: true };
+  return { missing: true };
+}
+function selectPlayer(name) {
+  let count = 0;
+  Object.keys(state).forEach((id) => {
+    const index = state[id].players.findIndex((p) => p.name === name);
+    if (index < 0) return;
+    state[id].index = index;
+    renderChart(id);
+    count += 1;
+  });
+  return count;
+}
+function bindFinder() {
+  const form = document.getElementById("finder");
+  const input = document.getElementById("player");
+  const note = document.getElementById("finder-note");
+  const list = document.getElementById("player-names");
+  if (!form || !input || !note || !list) return;
+  list.innerHTML = chartingNames().map((name) => `<option value="${esc(name)}"></option>`).join("");
+  const show = (query) => {
+    const found = findChartingName(query);
+    if (found.empty) {
+      note.textContent = "Type a charting name.";
+      return;
+    }
+    if (found.missing) {
+      note.textContent = "That name is not on these charts.";
+      return;
+    }
+    if (found.many) {
+      note.textContent = "More than one player has that name. Use the full charting name.";
+      return;
+    }
+    selectPlayer(found.name);
+    input.value = found.name;
+    note.textContent = found.name + " is selected on every chart that includes that name.";
+    const url = new URL(window.location.href);
+    url.searchParams.set("player", found.name);
+    history.replaceState(null, "", url.pathname + url.search + url.hash);
+  };
+  form.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    show(input.value);
+  });
+  const initial = new URLSearchParams(window.location.search).get("player");
+  if (initial) {
+    input.value = initial;
+    show(initial);
+  }
+}
 fetch("../data/charts.json")
   .then((res) => { if (!res.ok) throw new Error(String(res.status)); return res.json(); })
   .then((rows) => {
@@ -479,6 +546,7 @@ fetch("../data/charts.json")
       state[row.id] = { players: row.players, index: pickIndex(row.id, row.players), points: [] };
       mount(row.id);
     });
+    bindFinder();
   })
   .catch((err) => {
     document.getElementById("atp").textContent = "The charts could not be loaded.";

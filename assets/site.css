@@ -84,7 +84,7 @@ a { color: var(--ball); }
 .chart .note { color: var(--muted); max-width: 62ch; }
 .map {
   background: #fff;
-  margin: 14px 0;
+  margin: 14px 0 0;
 }
 .map svg { width: 100%; height: auto; display: block; }
 .detail h3 { margin: 0; font-family: Syne, sans-serif; font-size: 16px; }
@@ -92,7 +92,7 @@ a { color: var(--ball); }
 .defs { margin: 14px 0 0; max-width: 68ch; }
 .defs p { margin: 0 0 10px; color: var(--muted); }
 .defs b { color: var(--ink); font-weight: 600; }
-.row { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.row { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
 button.save {
   font-family: Syne, sans-serif;
   letter-spacing: 0.12em;

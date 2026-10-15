@@ -333,7 +333,7 @@ function mount(id) {
   const article = document.createElement("article");
   article.className = "chart";
   article.id = "chart-" + id;
-  article.innerHTML = `<h2>${esc(spec.title)}</h2><p class="note">${esc(spec.lede)}</p><div class="map"></div><div class="detail"></div><div class="defs"><p>${esc(spec.defLede)}</p>${spec.defs.map(([term, text]) => `<p><b>${esc(term)}.</b> ${esc(text)}</p>`).join("")}</div><div class="row"><button type="button" class="save">Save</button><span class="status"></span></div>`;
+  article.innerHTML = `<h2>${esc(spec.title)}</h2><p class="note">${esc(spec.lede)}</p><div class="map"></div><div class="row"><button type="button" class="save">Save</button><span class="status"></span></div><div class="detail"></div><div class="defs"><p>${esc(spec.defLede)}</p>${spec.defs.map(([term, text]) => `<p><b>${esc(term)}.</b> ${esc(text)}</p>`).join("")}</div>`;
   document.getElementById(spec.group).appendChild(article);
   renderChart(id);
   article.querySelector(".map").addEventListener("click", (ev) => {
@@ -355,7 +355,7 @@ function mount(id) {
   article.querySelector(".save").addEventListener("click", () => saveChart(id, article));
 }
 function drawLogo(ctx, width, height) {
-  const label = "Tennis Intelligence";
+  const label = "TennisIntelligence.Org";
   ctx.save();
   ctx.font = "700 22px Syne, sans-serif";
   ctx.fillStyle = "#14241c";

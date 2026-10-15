@@ -2,9 +2,7 @@ name: Deploy site
 
 on:
   push:
-    branches: [main]
   pull_request:
-    branches: [main]
 
 permissions:
   contents: read
@@ -25,9 +23,14 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: e72093dfebf574464e272ad29812c022
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BRANCH=$(printf '%s' "${{ github.head_ref }}" | tr '/' '-')
+            RAW="${{ github.head_ref }}"
           else
+            RAW="${{ github.ref_name }}"
+          fi
+          if [ "$RAW" = "main" ]; then
             BRANCH=main
+          else
+            BRANCH=$(printf '%s' "$RAW" | tr '/' '-')
           fi
           set +e
           OUT=$(npx --yes wrangler@4 pages deploy . \

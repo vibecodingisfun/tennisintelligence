@@ -23,7 +23,7 @@ export function lastName(name) {
   return parts[parts.length - 1] || name;
 }
 
-export const ORDER = ["drop", "fh", "fhpts", "bh", "serve", "first", "wtaFh", "wtaBh", "wtaSv", "wtaFs"];
+export const ORDER = ["drop", "fh", "fhpts", "bh", "serve", "first", "wtaDr", "wtaFh", "wtaBh", "wtaSv", "wtaFs"];
 
 export const COPY = {
   drop: {
@@ -115,6 +115,21 @@ export const COPY = {
     always: MEN,
     meta: (p) => `${p.charts} charted matches · ${p.serve_pts} serve points · won ${n(p.first_won_pct, 1)}% when the first serve landed · first serve in ${n(p.first_in_pct, 1)}%`,
   },
+  wtaDr: {
+    group: "wta", title: "WTA drop shots", caption: "WTA Dropshot Quality", file: "wta-dropshot-quality.png",
+    blurb: "How often a player ends points with a drop shot, and how often it works, for the women's tour.",
+    lede: "Same three drop-shot numbers as the men's chart. A player also needs at least 20 drop-shot points. Each point is a player. Tap one.",
+    x: "freq", y: "win", size: "won_per_100", yDigits: 0,
+    xLabel: "Drop shots per 100 points →", yLabel: "Drop-shot points won",
+    defLede: "A drop shot here is the Match Charting Project shot type Dr. The count is points that ended on that shot, not every drop hit during a rally.",
+    defs: [
+      ["Horizontal axis", "Drop-shot points / all charted points, then × 100. Charted points are serve points plus return points from the match overview."],
+      ["Vertical axis", "Of those drop-shot points, the share that the player won. Won means a drop-shot winner or a forced error induced by the drop. Unforced errors on the drop count against this rate."],
+      ["Point size", "Drop-shot points won / all charted points, then × 100. Marketa Vondrousova is the largest point in this group."],
+    ],
+    always: WTA_ALWAYS, exact: true,
+    meta: (p) => `${p.charts} charted matches · ${p.drop_n} drop-shot points · ${n(p.freq, 2)} per 100 points · ${n(p.win, 1)}% won · ${n(p.won_per_100, 2)} won per 100 points`,
+  },
   wtaFh: {
     group: "wta", title: "WTA forehand points", caption: "WTA Forehand Points", file: "wta-forehand-points.png",
     blurb: "Forehand winner rate against forehand points won, for the women's tour.",
@@ -176,7 +191,7 @@ export const COPY = {
   },
 };
 
-export const WTA_LEDE = "Active: current rank 50 or better, a match since 2025, and at least 20 charted matches. Plus anyone with 3 or more Grand Slam singles titles who has a charted match since October 2016. Na Li is included. The numbers use all of their charted matches.";
+export const WTA_LEDE = "Active: current rank 50 or better, a match since 2025, and at least 20 charted matches. Plus anyone with 3 or more Grand Slam singles titles who has a charted match since October 2016. Na Li is included, except on drop shots, which needs 20 drop-shot points. The numbers use all of their charted matches. There is no WTA forehand-speed chart: the WTA does not publish players' average forehand speeds.";
 
 export function pickIndex(id, players) {
   if (id === "fh") {

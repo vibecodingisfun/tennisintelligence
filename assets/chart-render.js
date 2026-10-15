@@ -39,8 +39,8 @@ function displayNames(players) {
     return `${first.slice(0, 1)} ${lasts[i]}`;
   });
 }
-function nameBox(x, y, anchor, text, font) {
-  const w = Math.max(font * 1.6, text.length * font * 0.54);
+function nameBox(x, y, anchor, text, font, charW = 0.54) {
+  const w = Math.max(font * 1.6, text.length * font * charW);
   const h = font * 1.2;
   let l = x;
   if (anchor === "middle") l = x - w / 2;
@@ -68,7 +68,7 @@ function placeNames(items) {
         const anchor = Math.abs(dx) < 1.2 ? "middle" : (dx > 0 ? "start" : "end");
         const x = it.x + (anchor === "middle" ? 0 : dx);
         const y = it.y + dy;
-        const box = nameBox(x, y, anchor, text, it.font);
+        const box = nameBox(x, y, anchor, text, it.font, it.charW);
         if (box.l < 16 || box.r > 116 || box.t < 2 || box.b > 100) return;
         let score = extra * 0.05;
         dots.forEach((o) => { if (boxesOverlap(box, o, 0.3)) score += 8; });
@@ -82,7 +82,7 @@ function placeNames(items) {
     if (!best) {
       const x = Math.min(112, it.x + it.r + 1.6);
       const y = Math.min(98, Math.max(4, it.y));
-      best = { i: it.i, x, y, anchor: "start", box: nameBox(x, y, "start", text, it.font), leader: true, px: it.x, py: it.y, pr: it.r, text, selected: it.selected };
+      best = { i: it.i, x, y, anchor: "start", box: nameBox(x, y, "start", text, it.font, it.charW), leader: true, px: it.x, py: it.y, pr: it.r, text, selected: it.selected };
     }
     placed.push(best);
   });
@@ -165,7 +165,7 @@ export function renderSvg(spec, players, index, options = {}) {
   const labeled = compact ? compactLabelSet(spec, players, index, sized) : fullLabelSet(spec, players, points, index, sized);
   const items = [...labeled].map((i) => {
     const pt = points[i];
-    return { i, x: pt.x, y: pt.y, r: pt.r, name: names[i], rank: null, font: i === index ? font.sel : font.name, selected: i === index ? 1 : 0, minDist: pt.r + 4.4 };
+    return { i, x: pt.x, y: pt.y, r: pt.r, name: names[i], rank: null, font: i === index ? font.sel : font.name, selected: i === index ? 1 : 0, minDist: pt.r + 4.4, charW: compact ? 0.64 : 0.54 };
   });
   const labels = placeNames(items);
   const dots = players.map((p, i) => {

@@ -3,53 +3,137 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tennis Intelligence</title>
+<title>Tennis Intelligence · See the game in the data</title>
 <meta name="description" content="Tennis Intelligence uses data science to visualize how tennis is played: 495,128 tour matches, 16,582 players, and 7,088 shot-by-shot charts.">
+<meta name="theme-color" content="#f4efe4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=4">
 </head>
-<body>
-<div class="wrap">
-  <header>
-    <svg class="court" viewBox="0 0 54 30" aria-hidden="true">
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <a class="brand" href="./" aria-current="page">
+    <svg class="mark" viewBox="0 0 54 30" aria-hidden="true">
       <rect x="1" y="1" width="52" height="28"></rect>
       <line x1="27" y1="1" x2="27" y2="29"></line>
       <rect x="13" y="6" width="28" height="18"></rect>
       <line x1="13" y1="15" x2="41" y2="15"></line>
     </svg>
-    <b>Tennis Intelligence</b>
-  </header>
-  <h1 class="intro">See the game in the <em>data</em>.</h1>
-  <p class="pitch">Tennis Intelligence uses data science to visualize how tennis is actually played. The database is the match record itself: results, serve lines, and shot-by-shot charts, drawn so a pattern is something you can point at.</p>
-  <ul class="stats">
-    <li><b>495,128</b><span>tour matches, ATP and WTA</span></li>
-    <li><b>16,582</b><span>players in those matches</span></li>
-    <li><b>55,777</b><span>Grand Slam matches</span></li>
-    <li><b>7,088</b><span>matches charted shot by shot</span></li>
-  </ul>
-  <p class="pitch-note">ATP matches run from 1967, WTA matches from 1990, both through September 2026. 258,122 matches include a complete serve line. The charts use the shot-by-shot set: 91 men with at least 40 charted matches, and 46 women. Forehand speed is the smaller picture, 19 men with a published tracking average.</p>
-  <nav class="index" aria-label="Charts">
-    <h2>ATP</h2>
-    <ul>
-      <li><a href="charts/#chart-drop">Drop shots</a></li>
-      <li><a href="charts/#chart-fh">Forehands</a></li>
-      <li><a href="charts/#chart-fhpts">Forehand points</a></li>
-      <li><a href="charts/#chart-bh">Backhand quality</a></li>
-      <li><a href="charts/#chart-serve">Serve quality</a></li>
-      <li><a href="charts/#chart-first">First serve</a></li>
-    </ul>
-    <h2>WTA</h2>
-    <ul>
-      <li><a href="charts/#chart-wtaFh">WTA forehand points</a></li>
-      <li><a href="charts/#chart-wtaBh">WTA backhand quality</a></li>
-      <li><a href="charts/#chart-wtaSv">WTA serve quality</a></li>
-      <li><a href="charts/#chart-wtaFs">WTA first serve</a></li>
-    </ul>
+    <span>Tennis Intelligence</span>
+  </a>
+  <p class="issue">A tennis data journal · ATP from 1967 · WTA from 1990 · through September 2026</p>
+  <nav class="site-nav" aria-label="Site">
+    <a href="./" aria-current="page">Home</a>
+    <a href="charts/">Charts</a>
   </nav>
-  <p class="later"><b>Later</b><span>Radar</span><span>USTA Junior</span></p>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="kicker">Tennis, measured</p>
+      <h1 id="hero-title">See the game in the <em>data</em>.</h1>
+      <p class="pitch">Tennis Intelligence uses data science to visualize how tennis is actually played. The database is the match record itself: results, serve lines, and shot-by-shot charts, drawn so a pattern is something you can point at.</p>
+      <p class="actions">
+        <a class="button" href="charts/">Open the charts <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="charts/#finder">Find a player</a>
+      </p>
+    </div>
+    <figure class="hero-court" aria-hidden="true">
+      <svg viewBox="-6 -5 48 88">
+        <path class="draw" d="M0 0H36V78H0Z" pathLength="1"></path>
+        <path class="draw" d="M4.5 0V78" pathLength="1"></path>
+        <path class="draw" d="M31.5 78V0" pathLength="1"></path>
+        <path class="draw" d="M4.5 18H31.5" pathLength="1"></path>
+        <path class="draw" d="M31.5 60H4.5" pathLength="1"></path>
+        <path class="draw" d="M18 18V60" pathLength="1"></path>
+        <path class="draw" d="M18 0V0.9" pathLength="1"></path>
+        <path class="draw" d="M18 78V77.1" pathLength="1"></path>
+        <path class="draw net" d="M-3 39H39" pathLength="1"></path>
+        <circle class="ball" cx="25.5" cy="51" r="1.4"></circle>
+      </svg>
+      <figcaption>Fig. 0 — The court, 78 × 36 ft</figcaption>
+    </figure>
+  </section>
+
+  <section class="scale" aria-labelledby="scale-title" data-reveal>
+    <div class="section-head">
+      <p class="kicker">The database</p>
+      <h2 id="scale-title">The match record, counted.</h2>
+    </div>
+    <ul class="stats">
+      <li><b>495,128</b><span>tour matches, ATP and WTA</span></li>
+      <li><b>16,582</b><span>players in those matches</span></li>
+      <li><b>55,777</b><span>Grand Slam matches</span></li>
+      <li><b>7,088</b><span>matches charted shot by shot</span></li>
+    </ul>
+    <p class="pitch-note">ATP matches run from 1967, WTA matches from 1990, both through September 2026. 258,122 matches include a complete serve line. The charts use the shot-by-shot set: 91 men with at least 40 charted matches, and 46 women. Forehand speed is the smaller picture, 19 men with a published tracking average.</p>
+  </section>
+
+  <section class="featured" aria-labelledby="featured-title" data-reveal>
+    <div class="featured-copy">
+      <p class="kicker">Featured chart · <span class="num">03</span></p>
+      <h2 id="featured-title">Forehand points</h2>
+      <p class="premise">Every man with 40 or more charted matches, placed by how often the drive forehand ends the rally as a winner and how often it sits in a point he wins. Bigger dots hit more forehand winners per 100 points.</p>
+      <div class="readout" id="featured-readout"></div>
+      <p class="actions">
+        <a class="button" id="featured-open" href="charts/#chart-fhpts">Open the full chart <span aria-hidden="true">→</span></a>
+      </p>
+    </div>
+    <figure class="figure featured-figure">
+      <div class="map" id="featured-map"></div>
+      <figcaption class="hint">Tap a dot to choose a player. The full chart keeps that player selected.</figcaption>
+    </figure>
+  </section>
+
+  <section class="atlas" aria-labelledby="atlas-title" data-reveal>
+    <div class="section-head">
+      <p class="kicker">The atlas</p>
+      <h2 id="atlas-title">Ten charts. One player at a time.</h2>
+    </div>
+    <div class="atlas-tours">
+      <nav aria-label="ATP charts">
+        <h3>ATP <span>Men</span></h3>
+        <ol class="atlas-list">
+          <li><a href="charts/#chart-drop"><span class="num">01</span><b>Drop shots</b><span class="blurb">How often a player ends points with a drop shot, and how often it works.</span></a></li>
+          <li><a href="charts/#chart-fh"><span class="num">02</span><b>Forehands</b><span class="blurb">Published forehand speed against the points the forehand wins.</span></a></li>
+          <li><a href="charts/#chart-fhpts"><span class="num">03</span><b>Forehand points</b><span class="blurb">Forehand winner rate against the share of forehand points won.</span></a></li>
+          <li><a href="charts/#chart-bh"><span class="num">04</span><b>Backhand quality</b><span class="blurb">The same two questions asked of the drive backhand.</span></a></li>
+          <li><a href="charts/#chart-serve"><span class="num">05</span><b>Serve quality</b><span class="blurb">Free points off the serve against second-serve points won.</span></a></li>
+          <li><a href="charts/#chart-first"><span class="num">06</span><b>First serve</b><span class="blurb">Landing the first serve against winning behind it.</span></a></li>
+        </ol>
+      </nav>
+      <nav aria-label="WTA charts" class="wta">
+        <h3>WTA <span>Women</span></h3>
+        <ol class="atlas-list">
+          <li><a href="charts/#chart-wtaFh"><span class="num">07</span><b>Forehand points</b><span class="blurb">Forehand winner rate against forehand points won, for the women's tour.</span></a></li>
+          <li><a href="charts/#chart-wtaBh"><span class="num">08</span><b>Backhand quality</b><span class="blurb">The drive backhand on the women's tour.</span></a></li>
+          <li><a href="charts/#chart-wtaSv"><span class="num">09</span><b>Serve quality</b><span class="blurb">Free points off the serve against second-serve points won.</span></a></li>
+          <li><a href="charts/#chart-wtaFs"><span class="num">10</span><b>First serve</b><span class="blurb">Landing the first serve against winning behind it.</span></a></li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="later" aria-labelledby="later-title" data-reveal>
+    <p class="kicker" id="later-title">In preparation</p>
+    <ul>
+      <li><b>Radar</b><span class="tag">Planned</span></li>
+      <li><b>USTA Junior</b><span class="tag">Planned</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
   <p class="credit">Charting data: <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Jeff Sackmann Match Charting Project</a>. Not official ATP or WTA tracking. Forehand speed also uses published TennisViz and GIG Hawk-Eye averages.</p>
-</div>
+  <nav class="site-nav" aria-label="Footer">
+    <a href="./" aria-current="page">Home</a>
+    <a href="charts/">Charts</a>
+  </nav>
+</footer>
+<p class="sr-only" id="announce" aria-live="polite"></p>
+<script type="module" src="assets/home.js?v=4"></script>
 </body>
 </html>

@@ -4,60 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Charts · Tennis Intelligence</title>
-<meta name="description" content="ATP and WTA match-charting scatters, with the formula for each axis.">
+<meta name="description" content="Ten ATP and WTA match-charting scatters, with the formula for each axis.">
+<meta name="theme-color" content="#f4efe4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=3">
+<link rel="stylesheet" href="../assets/site.css?v=4">
 </head>
-<body>
-<div class="wrap charts">
-  <header>
-    <svg class="court" viewBox="0 0 54 30" aria-hidden="true">
+<body class="charts-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <a class="brand" href="../">
+    <svg class="mark" viewBox="0 0 54 30" aria-hidden="true">
       <rect x="1" y="1" width="52" height="28"></rect>
       <line x1="27" y1="1" x2="27" y2="29"></line>
       <rect x="13" y="6" width="28" height="18"></rect>
       <line x1="13" y1="15" x2="41" y2="15"></line>
     </svg>
-    <b>Tennis Intelligence</b>
-  </header>
-  <p><a class="back" href="../">Home</a></p>
-  <h1>Charts</h1>
-  <p class="lede">Each dot is a player. Save downloads the chart with the axis formulas under it.</p>
-  <form class="finder" id="finder">
-    <label for="player">Player</label>
-    <div class="line">
-      <input id="player" name="player" type="search" list="player-names" placeholder="Charting name" autocomplete="off" enterkeyhint="search">
-      <button type="submit">Show</button>
-    </div>
-    <datalist id="player-names"></datalist>
-    <p class="finder-note" id="finder-note" role="status"></p>
-  </form>
-  <nav class="index" aria-label="Charts">
-    <h2>ATP</h2>
-    <ul>
-      <li><a href="#chart-drop">Drop shots</a></li>
-      <li><a href="#chart-fh">Forehands</a></li>
-      <li><a href="#chart-fhpts">Forehand points</a></li>
-      <li><a href="#chart-bh">Backhand quality</a></li>
-      <li><a href="#chart-serve">Serve quality</a></li>
-      <li><a href="#chart-first">First serve</a></li>
-    </ul>
-    <h2>WTA</h2>
-    <ul>
-      <li><a href="#chart-wtaFh">WTA forehand points</a></li>
-      <li><a href="#chart-wtaBh">WTA backhand quality</a></li>
-      <li><a href="#chart-wtaSv">WTA serve quality</a></li>
-      <li><a href="#chart-wtaFs">WTA first serve</a></li>
-    </ul>
+    <span>Tennis Intelligence</span>
+  </a>
+  <p class="issue">A tennis data journal · ATP from 1967 · WTA from 1990 · through September 2026</p>
+  <nav class="site-nav" aria-label="Site">
+    <a href="../">Home</a>
+    <a href="./" aria-current="page">Charts</a>
   </nav>
-  <h2 class="section-title">ATP</h2>
-  <div id="atp"></div>
-  <h2 class="section-title">WTA</h2>
-  <p class="note" id="wta-lede"></p>
-  <div id="wta"></div>
+</header>
+
+<main id="main" class="desk">
+  <section class="opener" aria-labelledby="charts-title">
+    <p class="kicker">The atlas · <span class="num">10</span> charts</p>
+    <h1 id="charts-title">Ten ways to read the <em>game</em>.</h1>
+    <p class="pitch">Each dot is a player. Choose one and that player stays selected on every chart that includes them. Save downloads the chart as an image with the axis formulas under it.</p>
+  </section>
+
+  <aside class="rail" aria-label="Find a player and chart index">
+    <form class="finder" id="finder" role="search">
+      <label class="kicker" for="player">Find a player</label>
+      <div class="line">
+        <input id="player" name="player" type="search" list="player-names" placeholder="Charting name" autocomplete="off" enterkeyhint="search">
+        <button type="submit" class="button">Show</button>
+      </div>
+      <datalist id="player-names"></datalist>
+      <p class="finder-note" id="finder-note" role="status"></p>
+    </form>
+    <nav class="toc" aria-label="Charts">
+      <div>
+        <h2>ATP · Men</h2>
+        <ol>
+          <li><a href="#chart-drop"><span class="num">01</span>Drop shots</a></li>
+          <li><a href="#chart-fh"><span class="num">02</span>Forehands</a></li>
+          <li><a href="#chart-fhpts"><span class="num">03</span>Forehand points</a></li>
+          <li><a href="#chart-bh"><span class="num">04</span>Backhand quality</a></li>
+          <li><a href="#chart-serve"><span class="num">05</span>Serve quality</a></li>
+          <li><a href="#chart-first"><span class="num">06</span>First serve</a></li>
+        </ol>
+      </div>
+      <div class="wta">
+        <h2>WTA · Women</h2>
+        <ol>
+          <li><a href="#chart-wtaFh"><span class="num">07</span>Forehand points</a></li>
+          <li><a href="#chart-wtaBh"><span class="num">08</span>Backhand quality</a></li>
+          <li><a href="#chart-wtaSv"><span class="num">09</span>Serve quality</a></li>
+          <li><a href="#chart-wtaFs"><span class="num">10</span>First serve</a></li>
+        </ol>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="stream">
+    <section class="tour" aria-labelledby="atp-title">
+      <div class="tour-head">
+        <h2 id="atp-title">ATP <span>Men</span></h2>
+      </div>
+      <div id="atp"></div>
+    </section>
+    <section class="tour" aria-labelledby="wta-title">
+      <div class="tour-head">
+        <h2 id="wta-title">WTA <span>Women</span></h2>
+        <p id="wta-lede"></p>
+      </div>
+      <div id="wta"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
   <p class="credit">Charting data: <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Jeff Sackmann Match Charting Project</a>. Not official ATP or WTA tracking. Forehand speed also uses published TennisViz and GIG Hawk-Eye averages.</p>
-</div>
-<script src="../assets/charts.js"></script>
+  <nav class="site-nav" aria-label="Footer">
+    <a href="../">Home</a>
+    <a href="./" aria-current="page">Charts</a>
+  </nav>
+</footer>
+<p class="sr-only" id="announce" aria-live="polite"></p>
+<script type="module" src="../assets/charts.js?v=4"></script>
 </body>
 </html>

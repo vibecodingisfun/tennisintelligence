@@ -1,7 +1,7 @@
 # Cloudflare Pages + Functions config for tennisintelligence.org
 name = "tennisintelligence"
 compatibility_date = "2026-10-18"
-pages_build_output_dir = "."
+pages_build_output_dir = "dist"
 
 [[d1_databases]]
 binding = "DB"

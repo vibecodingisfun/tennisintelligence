@@ -1050,3 +1050,9 @@ button.save:disabled { opacity: 0.5; cursor: progress; }
   .data-page .data-desk { padding-inline: var(--pad); }
   .request-form { padding-inline: 14px; }
 }
+
+/* USTA page: documents list (2026-11-25) */
+.usta-refs { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid currentColor; border-top-color: color-mix(in srgb, currentColor 18%, transparent); }
+.usta-refs h2 { font-size: 1.25rem; margin: 0 0 0.75rem; }
+.usta-refs ul { margin: 0; padding-left: 1.1rem; }
+.usta-refs li { margin: 0.35rem 0; overflow-wrap: anywhere; }

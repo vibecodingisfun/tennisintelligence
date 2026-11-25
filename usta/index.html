@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USTA Junior · Tennis Intelligence</title>
+<meta name="description" content="USTA junior points tables by round and level, and a plain-language FAQ on how national rankings are calculated.">
+<meta name="theme-color" content="#f4efe4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=17">
+</head>
+<body class="usta-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="brand-block">
+    <a class="brand" href="../">
+      <svg class="mark" viewBox="0 0 54 30" aria-hidden="true">
+        <rect x="1" y="1" width="52" height="28"></rect>
+        <line x1="27" y1="1" x2="27" y2="29"></line>
+        <rect x="13" y="6" width="28" height="18"></rect>
+        <line x1="13" y1="15" x2="41" y2="15"></line>
+      </svg>
+      <span>Tennis Intelligence</span>
+    </a>
+    <p class="issue">A tennis data journal · ATP from 1967 · WTA from 1990 · through September 2026</p>
+  </div>
+  <nav class="site-nav" aria-label="Site">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="../radar/">Radar</a>
+    <a href="../styles/">Styles</a>
+    <a href="../data/">Data</a>
+    <a href="./" aria-current="page">USTA</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="opener" aria-labelledby="usta-title">
+    <p class="kicker">USTA junior</p>
+    <h1 id="usta-title">Points tables and ranking <em>FAQ</em>.</h1>
+    <p class="pitch">Unofficial layout of USTA's January 2025 points tables, and a plain-language FAQ on how national standings add up. Numbers are USTA's. Tennis Intelligence is not affiliated with, endorsed by, or sponsored by USTA.</p>
+    <p class="pitch-note">Source layout from <a href="https://vibecodingisfun.github.io/maindraw/usta-junior-points.html">MainDraw</a>. Official PDF: <a href="https://www.usta.com/content/dam/usta/2026-pdfs/jr-points-table-2026.pdf">USTA junior points table</a>.</p>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="USTA junior sections">
+    <button type="button" role="tab" id="tab-points" aria-controls="panel-points" aria-selected="true">Points tables</button>
+    <button type="button" role="tab" id="tab-faq" aria-controls="panel-faq" aria-selected="false">Rankings FAQ</button>
+  </div>
+
+  <section class="tab-panel" id="panel-points" role="tabpanel" aria-labelledby="tab-points">
+    <p class="panel-lede">Pick the draw format, then the level. On a phone, one level stays on screen, and rows marked n/a for that level stay hidden.</p>
+    <div class="usta-tables">
+<details class="format" id="fic-round-of-16" name="points-format" open>
+  <summary>Feed-in championship through the round of 16</summary>
+  <div class="sheet" data-selected="5">
+    <p class="note">Includes a quarterfinal playoff. There is no separate 7th-place row in USTA&#x27;s table.</p>
+    <div class="levels" role="group" aria-label="Tournament level">
+      <button type="button" data-select="1" aria-pressed="false">Level 1</button><button type="button" data-select="2" aria-pressed="false">Level 2</button><button type="button" data-select="3" aria-pressed="false">Level 3</button><button type="button" data-select="4" aria-pressed="false">Level 4</button><button type="button" data-select="5" aria-pressed="true">Level 5</button><button type="button" data-select="6" aria-pressed="false">Level 6</button><button type="button" data-select="7" aria-pressed="false">Level 7</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">Level 1</th><th scope="col" data-col="2">Level 2</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th><th scope="col" data-col="6">Level 6</th><th scope="col" data-col="7">Level 7</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Champion</th><td data-col="1">3000</td><td data-col="2">1650</td><td data-col="3">900</td><td data-col="4">540</td><td data-col="5">300</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Finalist</th><td data-col="1">2400</td><td data-col="2">1238</td><td data-col="3">675</td><td data-col="4">405</td><td data-col="5">225</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">3rd place</th><td data-col="1">1950</td><td data-col="2">990</td><td data-col="3">540</td><td data-col="4">324</td><td data-col="5">180</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">4th place</th><td data-col="1">1800</td><td data-col="2">825</td><td data-col="3">450</td><td data-col="4">270</td><td data-col="5">150</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">5th, quarterfinal playoff winner</th><td data-col="1">1350</td><td data-col="2">578</td><td data-col="3">315</td><td data-col="4">189</td><td data-col="5">105</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">6th, quarterfinal playoff runner-up</th><td data-col="1">1080</td><td data-col="2">528</td><td data-col="3">288</td><td data-col="4">173</td><td data-col="5">96</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">8th, quarterfinal playoff first-round losers</th><td data-col="1">960</td><td data-col="2">462</td><td data-col="3">252</td><td data-col="4">151</td><td data-col="5">84</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC winner (9th)</th><td data-col="1">840</td><td data-col="2">429</td><td data-col="3">234</td><td data-col="4">140</td><td data-col="5">78</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC runner-up (10th)</th><td data-col="1">720</td><td data-col="2">363</td><td data-col="3">198</td><td data-col="4">119</td><td data-col="5">66</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC semifinalist</th><td data-col="1">630</td><td data-col="2">314</td><td data-col="3">171</td><td data-col="4">103</td><td data-col="5">57</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC quarterfinalist</th><td data-col="1">540</td><td data-col="2">264</td><td data-col="3">144</td><td data-col="4">86</td><td data-col="5">48</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 16</th><td data-col="1">450</td><td data-col="2">231</td><td data-col="3">126</td><td data-col="4">76</td><td data-col="5">42</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 16 qualifier (32-draw first-round losers)</th><td data-col="1">360</td><td data-col="2">198</td><td data-col="3">108</td><td data-col="4">65</td><td data-col="5">36</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 32</th><td data-col="1">270</td><td data-col="2">149</td><td data-col="3">81</td><td data-col="4">49</td><td data-col="5">27</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 32 qualifier (64-draw first-round losers)</th><td data-col="1">210</td><td data-col="2">116</td><td data-col="3">63</td><td data-col="4">38</td><td data-col="5">21</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 64</th><td data-col="1">150</td><td data-col="2">83</td><td data-col="3">45</td><td data-col="4">27</td><td data-col="5">15</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 64 qualifier (128-draw first-round losers)</th><td data-col="1">105</td><td data-col="2">66</td><td data-col="3">36</td><td data-col="4">22</td><td data-col="5">12</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 128</th><td data-col="1">90</td><td data-col="2">58</td><td data-col="3">32</td><td data-col="4">19</td><td data-col="5">11</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 128 qualifier (192- and 256-draw first-round losers)</th><td data-col="1">75</td><td data-col="2">53</td><td data-col="3">29</td><td data-col="4">17</td><td data-col="5">10</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Main draw wins</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">20</td><td data-col="7">12</td></tr><tr><th scope="row">Consolation wins</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">Champion points</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">15</td><td data-col="7">8</td></tr><tr><th scope="row">Finalist points</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="fic-quarters" name="points-format">
+  <summary>Feed-in championship through the quarterfinals</summary>
+  <div class="sheet" data-selected="5">
+    <p class="note">Places are the round reached in the feed-in. The per-win consolation row is used at the BG14 national championship only.</p>
+    <div class="levels" role="group" aria-label="Tournament level">
+      <button type="button" data-select="1" aria-pressed="false">Level 1</button><button type="button" data-select="2" aria-pressed="false">Level 2</button><button type="button" data-select="3" aria-pressed="false">Level 3</button><button type="button" data-select="4" aria-pressed="false">Level 4</button><button type="button" data-select="5" aria-pressed="true">Level 5</button><button type="button" data-select="6" aria-pressed="false">Level 6</button><button type="button" data-select="7" aria-pressed="false">Level 7</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">Level 1</th><th scope="col" data-col="2">Level 2</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th><th scope="col" data-col="6">Level 6</th><th scope="col" data-col="7">Level 7</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Champion</th><td data-col="1">3000</td><td data-col="2">1650</td><td data-col="3">900</td><td data-col="4">540</td><td data-col="5">300</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Finalist</th><td data-col="1">2400</td><td data-col="2">1238</td><td data-col="3">675</td><td data-col="4">405</td><td data-col="5">225</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">3rd place</th><td data-col="1">1950</td><td data-col="2">990</td><td data-col="3">540</td><td data-col="4">324</td><td data-col="5">180</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">4th place</th><td data-col="1">1800</td><td data-col="2">825</td><td data-col="3">450</td><td data-col="4">270</td><td data-col="5">150</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC winner (5th)</th><td data-col="1">1350</td><td data-col="2">578</td><td data-col="3">315</td><td data-col="4">189</td><td data-col="5">105</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC runner-up (6th)</th><td data-col="1">1050</td><td data-col="2">495</td><td data-col="3">270</td><td data-col="4">162</td><td data-col="5">90</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC semifinalist</th><td data-col="1">900</td><td data-col="2">396</td><td data-col="3">216</td><td data-col="4">130</td><td data-col="5">72</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC quarterfinalist</th><td data-col="1">750</td><td data-col="2">347</td><td data-col="3">189</td><td data-col="4">113</td><td data-col="5">63</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC quarterfinal qualifier (16-draw first-round losers)</th><td data-col="1">600</td><td data-col="2">297</td><td data-col="3">162</td><td data-col="4">97</td><td data-col="5">54</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 16</th><td data-col="1">450</td><td data-col="2">231</td><td data-col="3">126</td><td data-col="4">76</td><td data-col="5">42</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 16 qualifier (32-draw first-round losers)</th><td data-col="1">360</td><td data-col="2">198</td><td data-col="3">108</td><td data-col="4">65</td><td data-col="5">36</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 32</th><td data-col="1">300</td><td data-col="2">149</td><td data-col="3">81</td><td data-col="4">49</td><td data-col="5">27</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 32 qualifier (64-draw first-round losers)</th><td data-col="1">210</td><td data-col="2">116</td><td data-col="3">63</td><td data-col="4">38</td><td data-col="5">21</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 64</th><td data-col="1">150</td><td data-col="2">83</td><td data-col="3">45</td><td data-col="4">27</td><td data-col="5">15</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 64 qualifier (128-draw first-round losers)</th><td data-col="1">90</td><td data-col="2">50</td><td data-col="3">27</td><td data-col="4">16</td><td data-col="5">9</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached FIC round of 128</th><td data-col="1">60</td><td data-col="2">33</td><td data-col="3">18</td><td data-col="4">11</td><td data-col="5">6</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">FIC round of 128 qualifier (192- and 256-draw first-round losers)</th><td data-col="1">30</td><td data-col="2">17</td><td data-col="3">9</td><td data-col="4">5</td><td data-col="5">3</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Points per win, FIC consolation (BG14 nationals only)</th><td data-col="1">15</td><td data-col="2">8</td><td data-col="3">5</td><td data-col="4">3</td><td data-col="5">2</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Main draw wins</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">20</td><td data-col="7">12</td></tr><tr><th scope="row">Consolation wins</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">Champion points</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">15</td><td data-col="7">8</td></tr><tr><th scope="row">Finalist points</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details>      <details class="format" id="round-robin" name="points-format">
+  <summary>Round Robin</summary>
+  <div class="sheet full">
+    <p class="note">Each win scores. A player can count at most 5 matches at Levels 3–5, and at most 4 matches at Levels 6–7.</p>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th><th scope="col" data-col="6">Level 6</th><th scope="col" data-col="7">Level 7</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Round robin win</th><td data-col="3">225</td><td data-col="4">135</td><td data-col="5">75</td><td data-col="6">20</td><td data-col="7">12</td></tr><tr><th scope="row">Champion points</th><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">15</td><td data-col="7">8</td></tr><tr><th scope="row">Finalist points</th><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="round-robin-playoff" name="points-format">
+  <summary>Round Robin with a first-match consolation playoff</summary>
+  <div class="sheet" data-selected="5">
+    <p class="note">Each win scores. At Levels 6–7, at most 4 matches count.</p>
+    <div class="levels" role="group" aria-label="Tournament level">
+      <button type="button" data-select="3" aria-pressed="false">Level 3</button><button type="button" data-select="4" aria-pressed="false">Level 4</button><button type="button" data-select="5" aria-pressed="true">Level 5</button><button type="button" data-select="6" aria-pressed="false">Level 6</button><button type="button" data-select="7" aria-pressed="false">Level 7</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th><th scope="col" data-col="6">Level 6</th><th scope="col" data-col="7">Level 7</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Preliminary round robin matches</th><td data-col="3">71</td><td data-col="4">43</td><td data-col="5">24</td><td data-col="6">20</td><td data-col="7">12</td></tr><tr><th scope="row">Champion bracket main draw matches</th><td data-col="3">229</td><td data-col="4">137</td><td data-col="5">76</td><td data-col="6">20</td><td data-col="7">12</td></tr><tr><th scope="row">Champion bracket consolation matches</th><td data-col="3">71</td><td data-col="4">43</td><td data-col="5">24</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">2nd place round robin bracket matches</th><td data-col="3">41</td><td data-col="4">25</td><td data-col="5">14</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">3rd place round robin bracket matches</th><td data-col="3">34</td><td data-col="4">21</td><td data-col="5">11</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">4th place round robin bracket matches</th><td data-col="3">27</td><td data-col="4">16</td><td data-col="5">9</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">Champion points</th><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">15</td><td data-col="7">8</td></tr><tr><th scope="row">Finalist points</th><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="elimination" name="points-format">
+  <summary>Single elimination, compass, and modified feed-in</summary>
+  <div class="sheet" data-selected="5">
+    <p class="note">Also used for first-match consolation and voluntary consolation. Levels 1–5 score the round reached. Levels 6–7 score each win, and at most 4 matches count. Level 7 is compass only. Level 6 is compass or modified feed-in.</p>
+    <div class="levels" role="group" aria-label="Tournament level">
+      <button type="button" data-select="1" aria-pressed="false">Level 1</button><button type="button" data-select="2" aria-pressed="false">Level 2</button><button type="button" data-select="3" aria-pressed="false">Level 3</button><button type="button" data-select="4" aria-pressed="false">Level 4</button><button type="button" data-select="5" aria-pressed="true">Level 5</button><button type="button" data-select="6" aria-pressed="false">Level 6</button><button type="button" data-select="7" aria-pressed="false">Level 7</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">Level 1</th><th scope="col" data-col="2">Level 2</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th><th scope="col" data-col="6">Level 6</th><th scope="col" data-col="7">Level 7</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Champion</th><td data-col="1">3000</td><td data-col="2">1650</td><td data-col="3">900</td><td data-col="4">540</td><td data-col="5">300</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Finalist</th><td data-col="1">2400</td><td data-col="2">1238</td><td data-col="3">675</td><td data-col="4">405</td><td data-col="5">225</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">3rd place</th><td data-col="1">1950</td><td data-col="2">990</td><td data-col="3">540</td><td data-col="4">324</td><td data-col="5">180</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">4th place / semifinalist</th><td data-col="1">1800</td><td data-col="2">825</td><td data-col="3">450</td><td data-col="4">270</td><td data-col="5">150</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached quarterfinals</th><td data-col="1">1110</td><td data-col="2">578</td><td data-col="3">315</td><td data-col="4">189</td><td data-col="5">105</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached round of 16</th><td data-col="1">750</td><td data-col="2">297</td><td data-col="3">162</td><td data-col="4">97</td><td data-col="5">54</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached round of 32</th><td data-col="1">450</td><td data-col="2">165</td><td data-col="3">90</td><td data-col="4">54</td><td data-col="5">30</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached round of 64</th><td data-col="1">270</td><td data-col="2">99</td><td data-col="3">54</td><td data-col="4">32</td><td data-col="5">18</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached round of 128</th><td data-col="1">120</td><td data-col="2">66</td><td data-col="3">36</td><td data-col="4">22</td><td data-col="5">12</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Reached round of 256</th><td data-col="1">90</td><td data-col="2">33</td><td data-col="3">18</td><td data-col="4">11</td><td data-col="5">6</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Each consolation round</th><td data-col="1">105</td><td data-col="2">62</td><td data-col="3">32</td><td data-col="4">19</td><td data-col="5">11</td><td data-col="6" class="na">n/a</td><td data-col="7" class="na">n/a</td></tr><tr><th scope="row">Main draw wins</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">20</td><td data-col="7">12</td></tr><tr><th scope="row">Consolation wins</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr><tr><th scope="row">Champion points</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">15</td><td data-col="7">8</td></tr><tr><th scope="row">Finalist points</th><td data-col="1" class="na">n/a</td><td data-col="2" class="na">n/a</td><td data-col="3" class="na">n/a</td><td data-col="4" class="na">n/a</td><td data-col="5" class="na">n/a</td><td data-col="6">10</td><td data-col="7">6</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="team" name="points-format">
+  <summary>Team tournaments</summary>
+  <div class="sheet" data-selected="5">
+    <p class="note">Each win scores. At most 5 matches count at Levels 3–5, and at most 4 at Levels 6–7.</p>
+    <div class="levels" role="group" aria-label="Tournament level">
+      <button type="button" data-select="1" aria-pressed="false">Level 1</button><button type="button" data-select="2" aria-pressed="false">Level 2</button><button type="button" data-select="3" aria-pressed="false">Level 3</button><button type="button" data-select="4" aria-pressed="false">Level 4</button><button type="button" data-select="5" aria-pressed="true">Level 5</button><button type="button" data-select="6" aria-pressed="false">Level 6</button><button type="button" data-select="7" aria-pressed="false">Level 7</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">Level 1</th><th scope="col" data-col="2">Level 2</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th><th scope="col" data-col="6">Level 6</th><th scope="col" data-col="7">Level 7</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Position 1</th><td data-col="1">300</td><td data-col="2">180</td><td data-col="3">156</td><td data-col="4">105</td><td data-col="5">57</td><td data-col="6">24</td><td data-col="7">14</td></tr><tr><th scope="row">Position 2</th><td data-col="1">275</td><td data-col="2">156</td><td data-col="3">133</td><td data-col="4">91</td><td data-col="5">49</td><td data-col="6">21</td><td data-col="7">12</td></tr><tr><th scope="row">Position 3</th><td data-col="1">250</td><td data-col="2">131</td><td data-col="3">109</td><td data-col="4">78</td><td data-col="5">42</td><td data-col="6">18</td><td data-col="7">10</td></tr><tr><th scope="row">Position 4</th><td data-col="1">225</td><td data-col="2">108</td><td data-col="3">86</td><td data-col="4">65</td><td data-col="5">35</td><td data-col="6">15</td><td data-col="7">9</td></tr><tr><th scope="row">Position 5</th><td data-col="1">200</td><td data-col="2">84</td><td data-col="3">62</td><td data-col="4">53</td><td data-col="5">29</td><td data-col="6">12</td><td data-col="7">7</td></tr><tr><th scope="row">Position 6</th><td data-col="1">175</td><td data-col="2">59</td><td data-col="3">51</td><td data-col="4">39</td><td data-col="5">21</td><td data-col="6">10</td><td data-col="7">6</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="curtis" name="points-format">
+  <summary>Curtis consolation</summary>
+  <div class="sheet" data-selected="5">
+    <p class="note">A 64-player draw. Losers in the round of 64 and round of 32 enter one consolation. Losers in the round of 16 and the quarterfinals enter the Curtis consolation.</p>
+    <div class="levels" role="group" aria-label="Tournament level">
+      <button type="button" data-select="1" aria-pressed="false">Level 1</button><button type="button" data-select="2" aria-pressed="false">Level 2</button><button type="button" data-select="3" aria-pressed="false">Level 3</button><button type="button" data-select="4" aria-pressed="false">Level 4</button><button type="button" data-select="5" aria-pressed="true">Level 5</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">Level 1</th><th scope="col" data-col="2">Level 2</th><th scope="col" data-col="3">Level 3</th><th scope="col" data-col="4">Level 4</th><th scope="col" data-col="5">Level 5</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Champion</th><td data-col="1">3000</td><td data-col="2">1650</td><td data-col="3">900</td><td data-col="4">540</td><td data-col="5">300</td></tr><tr><th scope="row">Finalist</th><td data-col="1">2400</td><td data-col="2">1238</td><td data-col="3">675</td><td data-col="4">405</td><td data-col="5">225</td></tr><tr><th scope="row">3rd place</th><td data-col="1">1950</td><td data-col="2">990</td><td data-col="3">540</td><td data-col="4">324</td><td data-col="5">180</td></tr><tr><th scope="row">4th place / semifinalist</th><td data-col="1">1800</td><td data-col="2">825</td><td data-col="3">450</td><td data-col="4">270</td><td data-col="5">150</td></tr><tr><th scope="row">5th, Curtis consolation winner</th><td data-col="1">1350</td><td data-col="2">578</td><td data-col="3">315</td><td data-col="4">189</td><td data-col="5">105</td></tr><tr><th scope="row">6th, Curtis consolation runner-up</th><td data-col="1">1050</td><td data-col="2">528</td><td data-col="3">288</td><td data-col="4">173</td><td data-col="5">96</td></tr><tr><th scope="row">7th and 8th, Curtis consolation semifinalist</th><td data-col="1">930</td><td data-col="2">479</td><td data-col="3">261</td><td data-col="4">157</td><td data-col="5">87</td></tr><tr><th scope="row">Reached Curtis consolation quarterfinals</th><td data-col="1">840</td><td data-col="2">429</td><td data-col="3">234</td><td data-col="4">140</td><td data-col="5">78</td></tr><tr><th scope="row">Reached Curtis consolation round of 16</th><td data-col="1">750</td><td data-col="2">396</td><td data-col="3">216</td><td data-col="4">130</td><td data-col="5">72</td></tr><tr><th scope="row">Reached round of 32</th><td data-col="1">390</td><td data-col="2">87</td><td data-col="3">47</td><td data-col="4">28</td><td data-col="5">16</td></tr><tr><th scope="row">Points per win in the round-of-64 and round-of-32 consolation</th><td data-col="1">60</td><td data-col="2">54</td><td data-col="3">29</td><td data-col="4">18</td><td data-col="5">10</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="flighted-4" name="points-format">
+  <summary>Flighted Level 4</summary>
+  <div class="sheet" data-selected="1">
+    <p class="note">Draws of 16 or fewer. Round robin and team tournaments do not use this table.</p>
+    <div class="levels" role="group" aria-label="Flight">
+      <button type="button" data-select="1" aria-pressed="true">#1 Flight</button><button type="button" data-select="2" aria-pressed="false">#2 Flight</button><button type="button" data-select="3" aria-pressed="false">#3 Flight</button><button type="button" data-select="4" aria-pressed="false">#4 Flight</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">#1 Flight</th><th scope="col" data-col="2">#2 Flight</th><th scope="col" data-col="3">#3 Flight</th><th scope="col" data-col="4">#4 Flight</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Champion</th><td data-col="1">540</td><td data-col="2">351</td><td data-col="3">270</td><td data-col="4">189</td></tr><tr><th scope="row">Finalist</th><td data-col="1">405</td><td data-col="2">263</td><td data-col="3">203</td><td data-col="4">142</td></tr><tr><th scope="row">3rd place</th><td data-col="1">324</td><td data-col="2">211</td><td data-col="3">162</td><td data-col="4">113</td></tr><tr><th scope="row">4th place / semifinalist</th><td data-col="1">270</td><td data-col="2">176</td><td data-col="3">135</td><td data-col="4">95</td></tr><tr><th scope="row">Reached quarterfinal</th><td data-col="1">76</td><td data-col="2">49</td><td data-col="3">38</td><td data-col="4">26</td></tr><tr><th scope="row">Each consolation round won</th><td data-col="1">57</td><td data-col="2">37</td><td data-col="3">28</td><td data-col="4">20</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="flighted-5" name="points-format">
+  <summary>Flighted Level 5</summary>
+  <div class="sheet" data-selected="1">
+    <p class="note">Draws of 16 or fewer. Round robin and team tournaments do not use this table.</p>
+    <div class="levels" role="group" aria-label="Flight">
+      <button type="button" data-select="1" aria-pressed="true">#1 Flight</button><button type="button" data-select="2" aria-pressed="false">#2 Flight</button><button type="button" data-select="3" aria-pressed="false">#3 Flight</button><button type="button" data-select="4" aria-pressed="false">#4 Flight</button>
+    </div>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Result</th><th scope="col" data-col="1">#1 Flight</th><th scope="col" data-col="2">#2 Flight</th><th scope="col" data-col="3">#3 Flight</th><th scope="col" data-col="4">#4 Flight</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Champion</th><td data-col="1">300</td><td data-col="2">195</td><td data-col="3">150</td><td data-col="4">105</td></tr><tr><th scope="row">Finalist</th><td data-col="1">225</td><td data-col="2">146</td><td data-col="3">113</td><td data-col="4">79</td></tr><tr><th scope="row">3rd place</th><td data-col="1">180</td><td data-col="2">117</td><td data-col="3">90</td><td data-col="4">63</td></tr><tr><th scope="row">4th place / semifinalist</th><td data-col="1">150</td><td data-col="2">98</td><td data-col="3">75</td><td data-col="4">53</td></tr><tr><th scope="row">Reached quarterfinal</th><td data-col="1">42</td><td data-col="2">27</td><td data-col="3">21</td><td data-col="4">15</td></tr><tr><th scope="row">Each consolation round won</th><td data-col="1">32</td><td data-col="2">20</td><td data-col="3">16</td><td data-col="4">11</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details><details class="format" id="bonus" name="points-format">
+  <summary>Bonus points for a win against a ranked opponent</summary>
+  <div class="sheet">
+    <p class="note">These points stay with the tournament where they were earned. If that tournament is outside the best 6, the bonus does not count either.</p>
+    <div class="table-wrap"><table class="pts">
+      <thead><tr><th scope="col">Opponent ranking</th><th scope="col">Points</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Top 10</th><td>225</td></tr><tr><th scope="row">11 through 25</th><td>203</td></tr><tr><th scope="row">26 through 50</th><td>169</td></tr><tr><th scope="row">51 through 75</th><td>135</td></tr><tr><th scope="row">76 through 100</th><td>101</td></tr><tr><th scope="row">101 through 150</th><td>68</td></tr><tr><th scope="row">151 through 250</th><td>45</td></tr><tr><th scope="row">251 through 350</th><td>23</td></tr><tr><th scope="row">351 through 500</th><td>11</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</details>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq" hidden>
+    <p class="panel-lede">National standings are 100% of your best 6 singles tournaments, plus 15% of your best 6 doubles or mixed doubles, plus singles bonus points. Standings use a rolling 12 months.</p>
+    <div class="usta-compare">
+<header class="section-head">
+        <p class="eyebrow">Same job, two ways</p>
+        <h2>Checking a draw by hand, or in MainDraw</h2>
+      </header>
+      <div class="table-wrap">
+        <table class="pts compare">
+          <thead>
+            <tr>
+              <th scope="col">Task</th>
+              <th scope="col">On the USTA site</th>
+              <th scope="col">In MainDraw</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Who is in the field</th>
+              <td>Open the Players list and look up each name in the rankings and on UTR.</td>
+              <td>Read the open list and sort by National Ranking, UTR, or WTN.</td>
+            </tr>
+            <tr>
+              <th scope="row">Which results count</th>
+              <td>Rebuild the best 6 from the standings rules.</td>
+              <td>Tap the ranking. Up to six singles and six doubles appear, and the last row is the lowest that counts.</td>
+            </tr>
+            <tr>
+              <th scope="row">Next tournament</th>
+              <td>Set Sort &amp; Filter again each time you search.</td>
+              <td>Save the filter setup and open that name later.</td>
+            </tr>
+            <tr>
+              <th scope="row">More than one child</th>
+              <td>Switch accounts, then find each schedule.</td>
+              <td>Accounts opens that child's Upcoming and Completed schedule.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="usta-faq">
+<header class="section-head">
+        <p class="eyebrow">The questions</p>
+        <h2>Questions parents actually ask</h2>
+        <p>Ranking answers below are summarized from USTA's Help Center and the 2026 national junior rankings documents. Exact points for each round are in the <a href="#panel-points">2026 points tables</a>. A retirement, default, or walkover is covered in the national regulations, not in those tables.</p>
+      </header>
+      <nav class="jump" aria-label="Questions on this page">
+        <a href="#how-calculated">How points add up</a>
+        <a href="#which-results-count">Best 6</a>
+        <a href="#bonus-points">Bonus points</a>
+        <a href="#playing-up">Playing up</a>
+        <a href="#draw-strength">Draw strength</a>
+        <a href="#lookup-utr">Looking up UTR</a>
+        <a href="#utr-vs-usta">UTR vs ranking</a>
+        <a href="#seeding">Seeding</a>
+        <a href="#finding-tournaments">Finding events</a>
+        <a href="#several-kids">Several kids</a>
+        <a href="#how-many-tournaments">How many events</a>
+        <a href="#is-maindraw-official">Affiliation</a>
+        <a href="#cost">Price</a>
+      </nav>
+      <div class="faq">
+        <article id="how-calculated">
+          <h3>How are USTA junior national rankings calculated?</h3>
+          <p>USTA uses a Points Per Round system. A player's National Standings List total is 100% of the singles points from their best 6 singles tournaments, plus 15% of the points from their best 6 doubles or mixed doubles tournaments, plus singles bonus points. Standings use a rolling 12 months. Year-end Ranking Lists use the calendar year.</p>
+          <p class="source">USTA: <a href="https://customercare.usta.com/hc/en-us/articles/360051797471-Junior-National-Standings-List-FAQs">Junior National Standings List FAQs</a> · <a href="https://www.usta.com/content/dam/usta/2026-pdfs/2026-usta-national-junior-rankings.pdf">2026 National Junior Rankings (PDF)</a>.</p>
+        </article>
+        <article id="which-results-count">
+          <h3>Which of my child's results actually count toward their USTA ranking?</h3>
+          <p>Only the best 6 singles results and the best 6 doubles results in the window count. A player can have more tournaments on their record, and anything outside those best 6 is ignored. In MainDraw, tap a National Ranking number to see the singles and doubles that count, up to six of each. The last row of each group is the lowest score that counts, so you can see what the next result has to beat.</p>
+          <p class="source">USTA: <a href="https://www.usta.com/content/dam/usta/2026-pdfs/2026-usta-national-junior-rankings.pdf">2026 National Junior Rankings (PDF)</a> · <a href="https://customercare.usta.com/hc/en-us/articles/360051797471-Junior-National-Standings-List-FAQs">Junior National Standings List FAQs</a>.</p>
+        </article>
+        <article id="bonus-points">
+          <h3>Do bonus points count if the tournament isn't in my best 6?</h3>
+          <p>No. USTA attaches bonus points to the tournament where they were earned. If that tournament is not among the player's best six, neither its round points nor its bonus points count.</p>
+          <p class="source">USTA: <a href="https://customercare.usta.com/hc/en-us/articles/360051797471-Junior-National-Standings-List-FAQs">Junior National Standings List FAQs</a>.</p>
+        </article>
+        <article id="playing-up">
+          <h3>Does playing up an age division help or hurt the ranking?</h3>
+          <p>Points from an older division count fully toward a younger division, as long as the player has played a Junior Ranking Tournament in the younger division and the result is among the best 6. The other way, 20% of younger-division points count in the next older division. USTA also says the player must win a match for a played-up result to count.</p>
+          <p class="source">USTA: <a href="https://customercare.usta.com/hc/en-us/articles/360051797471-Junior-National-Standings-List-FAQs">Junior National Standings List FAQs</a>.</p>
+        </article>
+        <article id="draw-strength">
+          <h3>How can I check how strong a tournament draw or entry list is?</h3>
+          <p>On the USTA site, open the Players list and look up each name in the rankings and on UTR. MainDraw reads the Players list you have open, singles or doubles, and fills in National Ranking, UTR, and WTN in sortable columns, so you can sort the field by USTA ranking.</p>
+        </article>
+        <article id="lookup-utr">
+          <h3>Do people really look up opponents' UTRs before a USTA tournament?</h3>
+          <p>Many junior parents do, when they want to judge a draw. Some players prefer not to know. Doing it by hand means copying every name into UTR search. MainDraw runs that lookup with your own UTR sign-in and shows each player's UTR on the Players list. For 7 days after that, the Draw shows Singles UTR or Doubles UTR beside each saved player.</p>
+        </article>
+        <article id="utr-vs-usta">
+          <h3>What's the difference between UTR and USTA ranking?</h3>
+          <p>A USTA national ranking or standing comes from points earned by winning rounds at sanctioned junior tournaments over a set period. UTR, the Universal Tennis Rating, is a rating based on match scores against rated opponents, and it is run by Universal Tennis. Ranking is used for selection and seeding. Rating describes level. Many families track both. MainDraw shows them side by side and is not affiliated with either organization.</p>
+          <p class="source">USTA: <a href="https://www.usta.com/content/dam/usta/2026-pdfs/2026-usta-national-junior-rankings.pdf">2026 National Junior Rankings (PDF)</a>.</p>
+        </article>
+        <article id="seeding">
+          <h3>How are junior tournaments seeded?</h3>
+          <p>USTA publishes Seeding Lists that use the same criteria as the National Standings Lists. Only the best 6 singles results, or the best 6 doubles results, are used. Each tournament's seeding criteria are set out in the national regulations, including Table 2, so check the specific event.</p>
+          <p class="source">USTA: <a href="https://www.usta.com/content/dam/usta/2026-pdfs/usta-natitonal-jr-regulations-asof20260101.pdf">2026 National Junior Regulations (PDF)</a>.</p>
+        </article>
+        <article id="finding-tournaments">
+          <h3>Why is finding and registering for USTA tournaments so frustrating?</h3>
+          <p>The USTA website and TennisLink take a lot of clicks to find and register for a junior tournament. MainDraw opens USTA Find Tournaments with Sort &amp; Filter ready. You can save that filter setup and open it again later, instead of rebuilding it every time.</p>
+        </article>
+        <article id="several-kids">
+          <h3>I manage several kids' schedules. Is there an easier way to keep track of tournaments?</h3>
+          <p>In MainDraw, Accounts switches between family players, the way Switch Accounts works in the USTA Tennis app, and opens a child's Upcoming and Completed schedule. When you save a USTA page, MainDraw fills in a bookmark name from the tournament title and date, so saved events are easy to tell apart.</p>
+        </article>
+        <article id="how-many-tournaments">
+          <h3>How many tournaments a month should a 12-14 year old play?</h3>
+          <p>There is no official number. It depends on goals, health, school, and budget. Because only the best 6 singles results count, an extra tournament helps the ranking only when it is likely to beat the lowest result that currently counts. In MainDraw, the counting-results list is where you check that.</p>
+          <p class="source">USTA: <a href="https://customercare.usta.com/hc/en-us/articles/360051797471-Junior-National-Standings-List-FAQs">Junior National Standings List FAQs</a>.</p>
+        </article>
+        <article id="is-maindraw-official">
+          <h3>Is MainDraw official? Is it affiliated with USTA or Universal Tennis?</h3>
+          <p>No. MainDraw is an unofficial, independent app. It is not affiliated with, endorsed by, or sponsored by USTA or Universal Tennis. It shows the USTA pages you open yourself and looks up UTR with your own UTR sign-in.</p>
+        </article>
+        <article id="cost">
+          <h3>How much does MainDraw cost, and what do I need to run it?</h3>
+          <p>MainDraw is free to download. New installs include 30 days of free Look Up. After the trial, Look Up is $0.99 per month or $9.99 per year through Apple. It needs iOS 17 or later on iPhone and iPad. Try Demo uses a sample roster and works without logging in. Browsing, bookmarks, and Demo Mode stay available without a subscription.</p>
+          <p class="source">App Store: <a href="https://apps.apple.com/us/app/maindraw/id6810411828">MainDraw</a>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="credit">Unofficial summary of USTA junior ranking rules and points tables. Layout adapted from <a href="https://vibecodingisfun.github.io/maindraw/">MainDraw</a>. Not affiliated with USTA or Universal Tennis. Support: <a href="mailto:admin@tennisintelligence.org">admin@tennisintelligence.org</a>.</p>
+  <nav class="site-nav" aria-label="Footer">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="../radar/">Radar</a>
+    <a href="../styles/">Styles</a>
+    <a href="../data/">Data</a>
+    <a href="./" aria-current="page">USTA</a>
+  </nav>
+</footer>
+<script type="module" src="../assets/usta.js?v=7"></script>
+</body>
+</html>

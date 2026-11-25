@@ -1,5 +1,6 @@
 import { VB } from "./chart-config.js";
-import { renderSvg } from "./chart-render.js";
+import { renderSvg } from "./chart-render.js?v=16";
+import { shareImage } from "./share-image.js";
 
 function drawLogo(ctx, width, height) {
   const label = "TennisIntelligence.Org";
@@ -101,10 +102,5 @@ export async function exportPng(spec, players, index) {
 
 export async function saveChart(spec, players, index) {
   const blob = await exportPng(spec, players, index);
-  const fileUrl = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = fileUrl;
-  a.download = spec.file;
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(fileUrl), 1000);
+  return shareImage(blob, { filename: spec.file, title: spec.caption || "Tennis Intelligence" });
 }

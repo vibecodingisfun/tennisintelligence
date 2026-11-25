@@ -5,13 +5,15 @@ export const THEMES = {
     bg: "#ffffff", plotFill: "none", grid: null,
     frame: "rgba(26,46,36,0.35)", tick: "#3d4f44", axis: "#14241c",
     label: "#14241c", halo: "#ffffff", leader: "rgba(26,46,36,0.45)",
-    dot: "#1a2e24", star: "#c6e000", dotRing: "rgba(26,46,36,0.35)", onStroke: "#1a2e24", ring: null, dotOpacity: 0.72,
+    dot: "#1a2e24", star: "#c6e000", dotRing: "rgba(26,46,36,0.35)",
+    sel: "#6b3fa0", onStroke: "#4a2a72", ring: "#6b3fa0", dotOpacity: 0.72,
   },
   page: {
     bg: null, plotFill: "rgba(255,253,247,0.62)", grid: "rgba(16,33,23,0.07)",
     frame: "rgba(16,33,23,0.32)", tick: "#3a4c40", axis: "#102117",
     label: "#102117", halo: "#f8f5ed", leader: "rgba(16,33,23,0.42)",
-    dot: "#3b5646", star: "#d2ea2c", dotRing: "rgba(16,33,23,0.5)", onStroke: "#102117", ring: "#102117", dotOpacity: 0.58,
+    dot: "#3b5646", star: "#d2ea2c", dotRing: "rgba(16,33,23,0.5)",
+    sel: "#6b3fa0", onStroke: "#4a2a72", ring: "#6b3fa0", dotOpacity: 0.58,
   },
 };
 
@@ -23,7 +25,6 @@ const COMPACT_LABELS = 9;
 
 export function playerDotColor(name, theme) {
   const text = String(name || "");
-  if (/^na li$/i.test(text.trim())) return "#e10600";
   if (/alcaraz|sinner|federer|nadal|djokovic|agassi|sampras/i.test(text)) return theme.star;
   if (/swiatek|sabalenka|osaka|barty|kerber|sharapova|rybakina|clijsters/i.test(text)) return theme.star;
   if (/serena williams|venus williams/i.test(text)) return theme.star;
@@ -109,10 +110,17 @@ function findAlways(spec, players, name) {
   return players.findIndex((p) => spec.exact ? p.name === name : (p.name === name || lastName(p.name) === lastName(name)));
 }
 function fullLabelSet(spec, players, points, index, sized) {
-  const labeled = new Set([index]);
+  const labeled = new Set();
+  if (index >= 0) labeled.add(index);
   const lists = [rankedBy(players, spec.x), rankedBy(players, spec.y)];
   if (sized) lists.push(rankedBy(players, spec.size));
   lists.forEach((list) => list.slice(0, 4).forEach((item) => labeled.add(item[1])));
+  if (spec.guide === "diag") {
+    players.map((p, i) => [Math.abs(Number(p.delta) || 0), i])
+      .sort((a, b) => b[0] - a[0])
+      .slice(0, 4)
+      .forEach((item) => labeled.add(item[1]));
+  }
   const dist = points.map((pt) => {
     const px = (pt.x - PLOT.left) / PLOT.size;
     const py = (PLOT.top + PLOT.size - pt.y) / PLOT.size;
@@ -127,7 +135,8 @@ function fullLabelSet(spec, players, points, index, sized) {
   return labeled;
 }
 function compactLabelSet(spec, players, index, sized) {
-  const labeled = new Set([index]);
+  const labeled = new Set();
+  if (index >= 0) labeled.add(index);
   const lists = [rankedBy(players, spec.x), rankedBy(players, spec.y)];
   if (sized) lists.push(rankedBy(players, spec.size));
   lists.forEach((list) => labeled.add(list[0][1]));
@@ -148,10 +157,16 @@ export function renderSvg(spec, players, index, options = {}) {
   const ys = players.map((p) => p[spec.y]);
   const sized = Boolean(spec.size);
   const sizes = sized ? players.map((p) => p[spec.size]) : [1];
-  const xMin = Math.min(...xs);
-  const xMax = Math.max(...xs);
-  const yMin = Math.min(...ys);
-  const yMax = Math.max(...ys);
+  let xMin = Math.min(...xs);
+  let xMax = Math.max(...xs);
+  let yMin = Math.min(...ys);
+  let yMax = Math.max(...ys);
+  if (spec.equalScale) {
+    const lo = Math.min(xMin, yMin);
+    const hi = Math.max(xMax, yMax);
+    xMin = yMin = lo;
+    xMax = yMax = hi;
+  }
   const sMin = Math.min(...sizes);
   const sMax = Math.max(...sizes);
   const nx = (v) => (xMax === xMin ? 0.5 : (v - xMin) / (xMax - xMin));
@@ -162,19 +177,32 @@ export function renderSvg(spec, players, index, options = {}) {
     y: PLOT.top + (1 - ny(p[spec.y])) * PLOT.size,
     r: sized ? 1.2 + nr(p[spec.size]) * 2.6 : 1.7,
   }));
+  let guide = "";
+  if (spec.guide === "diag" && xMax > xMin) {
+    const x0 = Math.max(xMin, yMin);
+    const x1 = Math.min(xMax, yMax);
+    if (x1 > x0) {
+      const gx0 = PLOT.left + nx(x0) * PLOT.size;
+      const gy0 = PLOT.top + (1 - ny(x0)) * PLOT.size;
+      const gx1 = PLOT.left + nx(x1) * PLOT.size;
+      const gy1 = PLOT.top + (1 - ny(x1)) * PLOT.size;
+      guide = `<line x1="${gx0}" y1="${gy0}" x2="${gx1}" y2="${gy1}" stroke="${theme.frame}" stroke-width="0.35" stroke-dasharray="1.4 1.1" />`;
+    }
+  }
   const labeled = compact ? compactLabelSet(spec, players, index, sized) : fullLabelSet(spec, players, points, index, sized);
-  const items = [...labeled].map((i) => {
+  const items = [...labeled].filter((i) => i >= 0 && points[i]).map((i) => {
     const pt = points[i];
     return { i, x: pt.x, y: pt.y, r: pt.r, name: names[i], rank: null, font: i === index ? font.sel : font.name, selected: i === index ? 1 : 0, minDist: pt.r + 4.4, charW: compact ? 0.64 : 0.54 };
   });
   const labels = placeNames(items);
   const dots = players.map((p, i) => {
     const pt = points[i];
-    const on = i === index;
-    return `<g><circle cx="${pt.x}" cy="${pt.y}" r="${pt.r + 2.4}" fill="transparent"></circle><circle cx="${pt.x}" cy="${pt.y}" r="${pt.r}" fill="${playerDotColor(p.name, theme)}" fill-opacity="${on ? 1 : theme.dotOpacity}" stroke="${on ? theme.onStroke : theme.dotRing}" stroke-width="${on ? 0.5 : 0.28}"></circle></g>`;
+    const on = index >= 0 && i === index;
+    const fill = on ? theme.sel : playerDotColor(p.name, theme);
+    return `<g><circle cx="${pt.x}" cy="${pt.y}" r="${pt.r + 2.4}" fill="transparent"></circle><circle cx="${pt.x}" cy="${pt.y}" r="${pt.r}" fill="${fill}" fill-opacity="${on ? 1 : theme.dotOpacity}" stroke="${on ? theme.onStroke : theme.dotRing}" stroke-width="${on ? 0.55 : 0.28}"></circle></g>`;
   }).join("");
-  const sel = points[index];
-  const ring = theme.ring && sel ? `<circle class="sel-ring" cx="${sel.x}" cy="${sel.y}" r="${sel.r + 1.5}" fill="none" stroke="${theme.ring}" stroke-width="0.32"/>` : "";
+  const sel = index >= 0 ? points[index] : null;
+  const ring = theme.ring && sel ? `<circle class="sel-ring" cx="${sel.x}" cy="${sel.y}" r="${sel.r + 1.55}" fill="none" stroke="${theme.ring}" stroke-width="0.38"/>` : "";
   const right = PLOT.left + PLOT.size;
   const bottom = PLOT.top + PLOT.size;
   const yDigits = spec.yDigits == null ? 1 : spec.yDigits;
@@ -186,7 +214,7 @@ export function renderSvg(spec, players, index, options = {}) {
   const label = esc(options.label || spec.title);
   const bg = theme.bg ? `\n    <rect x="0" y="0" width="${VB}" height="${VB}" fill="${theme.bg}"/>` : "";
   const svg = `<svg viewBox="0 0 ${VB} ${VB}" role="img" aria-label="${label}">${bg}
-    <rect x="${PLOT.left}" y="${PLOT.top}" width="${PLOT.size}" height="${PLOT.size}" fill="${theme.plotFill}" stroke="${theme.frame}" stroke-width="0.4"/>${grid}
+    <rect x="${PLOT.left}" y="${PLOT.top}" width="${PLOT.size}" height="${PLOT.size}" fill="${theme.plotFill}" stroke="${theme.frame}" stroke-width="0.4"/>${grid}${guide}
     <text x="${PLOT.left}" y="${bottom + 4.6}" text-anchor="middle" fill="${theme.tick}" font-size="${font.tick}" font-family="IBM Plex Mono, monospace">${n(xMin, 1)}</text>
     <text x="${right}" y="${bottom + 4.6}" text-anchor="middle" fill="${theme.tick}" font-size="${font.tick}" font-family="IBM Plex Mono, monospace">${n(xMax, 1)}</text>
     <text x="${PLOT.left + PLOT.size / 2}" y="${bottom + 11}" text-anchor="middle" fill="${theme.axis}" font-size="${font.axis}" font-family="Syne, sans-serif">${esc(spec.xLabel)}</text>
@@ -195,7 +223,7 @@ export function renderSvg(spec, players, index, options = {}) {
     <text x="7.2" y="${PLOT.top + PLOT.size / 2}" text-anchor="middle" fill="${theme.axis}" font-size="${font.axis}" font-family="Syne, sans-serif" transform="rotate(-90 7.2 ${PLOT.top + PLOT.size / 2})">${esc(spec.yLabel)}</text>
     ${labels.map((lab) => leaderSvg(lab, theme)).join("")}
     ${dots}${ring}
-    ${labels.map((lab) => `<text x="${lab.x}" y="${lab.y}" text-anchor="${lab.anchor}" dominant-baseline="middle" fill="${theme.label}" stroke="${theme.halo}" stroke-width="0.95" paint-order="stroke" stroke-linejoin="round" font-size="${lab.selected ? font.sel : font.name}" font-family="Syne, sans-serif">${esc(lab.text)}</text>`).join("")}
+    ${labels.map((lab) => `<text x="${lab.x}" y="${lab.y}" text-anchor="${lab.anchor}" dominant-baseline="middle" fill="${lab.selected ? theme.sel : theme.label}" stroke="${theme.halo}" stroke-width="0.95" paint-order="stroke" stroke-linejoin="round" font-size="${lab.selected ? font.sel : font.name}" font-family="Syne, sans-serif">${esc(lab.text)}</text>`).join("")}
   </svg>`;
   return { svg, points };
 }

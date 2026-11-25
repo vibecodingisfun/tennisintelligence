@@ -1,5 +1,5 @@
 import { COPY, VB, esc, pickIndex } from "./chart-config.js";
-import { nearestPoint, renderSvg } from "./chart-render.js";
+import { nearestPoint, renderSvg } from "./chart-render.js?v=16";
 import { pulse, reveal } from "./motion.js";
 
 const FEATURED = "fhpts";
@@ -22,7 +22,7 @@ function render() {
   featured.points = points;
   map.innerHTML = svg;
   readout.innerHTML = `<p class="kicker">Selected player</p><h3>${esc(selected.name)}</h3><ul class="facts">${spec.meta(selected).split(" · ").map((fact) => `<li>${esc(fact)}</li>`).join("")}</ul>`;
-  open.href = `charts/?player=${encodeURIComponent(selected.name)}#chart-${FEATURED}`;
+  open.href = `plots/?player=${encodeURIComponent(selected.name)}#chart-${FEATURED}`;
 }
 
 if (map && readout && open) {

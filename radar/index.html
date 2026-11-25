@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar · Tennis Intelligence</title>
+<meta name="description" content="Playing-style radar charts for the ATP and WTA active top 20 and the Big 3. Each spoke is a tour percentile.">
+<meta name="theme-color" content="#f4efe4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=17">
+</head>
+<body class="radar-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="brand-block">
+    <a class="brand" href="../">
+      <svg class="mark" viewBox="0 0 54 30" aria-hidden="true">
+        <rect x="1" y="1" width="52" height="28"></rect>
+        <line x1="27" y1="1" x2="27" y2="29"></line>
+        <rect x="13" y="6" width="28" height="18"></rect>
+        <line x1="13" y1="15" x2="41" y2="15"></line>
+      </svg>
+      <span>Tennis Intelligence</span>
+    </a>
+    <p class="issue">A tennis data journal · ATP from 1967 · WTA from 1990 · through September 2026</p>
+  </div>
+  <nav class="site-nav" aria-label="Site">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="./" aria-current="page">Radar</a>
+    <a href="../styles/">Styles</a>
+    <a href="../data/">Data</a>
+    <a href="../usta/">USTA</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="opener" aria-labelledby="radar-title">
+    <p class="kicker">Playing style · five spokes</p>
+    <h1 id="radar-title">Radar for the <em>top of the tour</em>.</h1>
+    <p class="pitch">Each spoke is a percentile inside the whole tour. The outer ring is the top. A dim label was not charted, and that point sits at the center. ATP and WTA are ranked separately.</p>
+    <ul class="style-legend" id="radar-legend" aria-label="Style colors"></ul>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Tour">
+    <button type="button" role="tab" id="tab-atp" aria-controls="panel-atp" aria-selected="true">ATP · Men</button>
+    <button type="button" role="tab" id="tab-wta" aria-controls="panel-wta" aria-selected="false">WTA · Women</button>
+  </div>
+  <div id="radar-root"></div>
+
+  <section class="method-block" data-reveal aria-labelledby="method-title">
+    <p class="kicker" id="method-title">The spokes</p>
+    <dl class="method-grid" id="radar-method"></dl>
+  </section>
+
+  <section class="method-block style-defs-block" data-reveal aria-labelledby="style-defs-title">
+    <p class="kicker" id="style-defs-title">The labels</p>
+    <p class="panel-lede">These are the first style rules used for the radars, including all-court. The Styles page uses a later four-label set without all-court.</p>
+    <dl class="method-grid" id="radar-style-defs"></dl>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="credit">Serve, return, and safety use match serve lines. Winners and Control use Jeff Sackmann's <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Match Charting Project</a> when a player has 40 or more charted matches. Not official ATP or WTA tracking. Support: <a href="mailto:admin@tennisintelligence.org">admin@tennisintelligence.org</a>.</p>
+  <nav class="site-nav" aria-label="Footer">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="./" aria-current="page">Radar</a>
+    <a href="../styles/">Styles</a>
+    <a href="../data/">Data</a>
+    <a href="../usta/">USTA</a>
+  </nav>
+</footer>
+<script type="module" src="../assets/radar.js?v=8"></script>
+</body>
+</html>

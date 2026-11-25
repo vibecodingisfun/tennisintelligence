@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Styles · Tennis Intelligence</title>
+<meta name="description" content="ATP playing styles: attacker, counterpuncher, grinder, and pusher. Active top 50 and notable players, with rates, scores, and five-year changes.">
+<meta name="theme-color" content="#f4efe4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=17">
+</head>
+<body class="styles-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="brand-block">
+    <a class="brand" href="../">
+      <svg class="mark" viewBox="0 0 54 30" aria-hidden="true">
+        <rect x="1" y="1" width="52" height="28"></rect>
+        <line x1="27" y1="1" x2="27" y2="29"></line>
+        <rect x="13" y="6" width="28" height="18"></rect>
+        <line x1="13" y1="15" x2="41" y2="15"></line>
+      </svg>
+      <span>Tennis Intelligence</span>
+    </a>
+    <p class="issue">A tennis data journal · ATP from 1967 · WTA from 1990 · through September 2026</p>
+  </div>
+  <nav class="site-nav" aria-label="Site">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="../radar/">Radar</a>
+    <a href="./" aria-current="page">Styles</a>
+    <a href="../data/">Data</a>
+    <a href="../usta/">USTA</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="opener" aria-labelledby="styles-title">
+    <p class="kicker">Playing styles · ATP</p>
+    <h1 id="styles-title">Four ways to play the <em>match</em>.</h1>
+    <p class="pitch">Each player gets one label: attacker, counterpuncher, grinder, or pusher. Cells show the absolute rate, then the percentile in parentheses. The tables start on 1 Oct 2016. Five-year numbers and who changed sit further down.</p>
+    <p class="counts" id="ten-counts" aria-live="polite"></p>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Styles sections">
+    <button type="button" role="tab" id="tab-ten" aria-controls="panel-ten" aria-selected="true">Ten years</button>
+    <button type="button" role="tab" id="tab-scores" aria-controls="panel-scores" aria-selected="false">Scores</button>
+    <button type="button" role="tab" id="tab-five" aria-controls="panel-five" aria-selected="false">Five years</button>
+    <button type="button" role="tab" id="tab-changes" aria-controls="panel-changes" aria-selected="false">Changes</button>
+    <button type="button" role="tab" id="tab-method" aria-controls="panel-method" aria-selected="false">Method</button>
+  </div>
+
+  <section class="tab-panel" id="panel-ten" role="tabpanel" aria-labelledby="tab-ten">
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Active top 50 · ten years</h2>
+        <button type="button" class="save" id="save-active" disabled>Save</button>
+      </div>
+      <p class="swipe">Swipe the table sideways. The player name stays on the left.</p>
+      <div class="sheet" id="active"></div>
+      <p class="note" id="active-note"></p>
+    </article>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Notable players · ten years</h2>
+        <button type="button" class="save" id="save-famous" disabled>Save</button>
+      </div>
+      <p class="swipe">Swipe the table sideways. The player name stays on the left.</p>
+      <div class="sheet" id="famous"></div>
+      <p class="note" id="famous-note"></p>
+    </article>
+  </section>
+
+  <section class="tab-panel" id="panel-scores" role="tabpanel" aria-labelledby="tab-scores" hidden>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Active top 50 scores · ten years</h2>
+        <button type="button" class="save" id="save-active-score" disabled>Save</button>
+      </div>
+      <p class="swipe">Swipe the table sideways. The player name stays on the left.</p>
+      <div class="sheet" id="active-score"></div>
+      <p class="note" id="active-score-note"></p>
+      <p class="note" id="score-formula-note"></p>
+      <dl class="method-grid" id="score-formulas"></dl>
+    </article>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Notable player scores · ten years</h2>
+        <button type="button" class="save" id="save-famous-score" disabled>Save</button>
+      </div>
+      <p class="swipe">Swipe the table sideways. The player name stays on the left.</p>
+      <div class="sheet" id="famous-score"></div>
+      <p class="note" id="famous-score-note"></p>
+    </article>
+  </section>
+
+  <section class="tab-panel" id="panel-five" role="tabpanel" aria-labelledby="tab-five" hidden>
+    <p class="panel-lede" id="five-note"></p>
+    <p class="counts" id="five-counts"></p>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Active top 50 · five years</h2>
+        <button type="button" class="save" id="save-five-active" disabled>Save</button>
+      </div>
+      <p class="swipe">Swipe the table sideways. The player name stays on the left.</p>
+      <div class="sheet" id="five-active"></div>
+      <p class="note" id="five-active-note"></p>
+    </article>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Notable players · five years</h2>
+        <button type="button" class="save" id="save-five-famous" disabled>Save</button>
+      </div>
+      <p class="swipe">Swipe the table sideways. The player name stays on the left.</p>
+      <div class="sheet" id="five-famous"></div>
+      <p class="note" id="five-famous-note"></p>
+    </article>
+  </section>
+
+  <section class="tab-panel" id="panel-changes" role="tabpanel" aria-labelledby="tab-changes" hidden>
+    <p class="panel-lede" id="changes-note"></p>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Active top 50</h2>
+        <button type="button" class="save" id="save-changes-active" disabled>Save</button>
+      </div>
+      <div class="sheet" id="changes-active"></div>
+    </article>
+    <article class="style-block">
+      <div class="block-head">
+        <h2>Notable players</h2>
+        <button type="button" class="save" id="save-changes-famous" disabled>Save</button>
+      </div>
+      <div class="sheet" id="changes-famous"></div>
+    </article>
+  </section>
+
+  <section class="tab-panel" id="panel-method" role="tabpanel" aria-labelledby="tab-method" hidden>
+    <article class="style-block">
+      <h2>How the label is chosen</h2>
+      <p class="note" id="styles-note"></p>
+      <dl class="method-list" id="style-defs"></dl>
+    </article>
+    <article class="style-block">
+      <h2>Definitions</h2>
+      <dl class="method-list" id="defs"></dl>
+    </article>
+  </section>
+
+  <p class="err" id="error" hidden>The style tables did not load.</p>
+</main>
+
+<footer class="footer">
+  <p class="credit">Serve and return rates use tour match stats. Winners, long rallies, and opponent unforced errors use Jeff Sackmann's <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Match Charting Project</a> when a player has 40 or more charted matches. Not official ATP tracking. ATP only. Support: <a href="mailto:admin@tennisintelligence.org">admin@tennisintelligence.org</a>.</p>
+  <nav class="site-nav" aria-label="Footer">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="../radar/">Radar</a>
+    <a href="./" aria-current="page">Styles</a>
+    <a href="../data/">Data</a>
+    <a href="../usta/">USTA</a>
+  </nav>
+</footer>
+<script type="module" src="../assets/styles.js?v=1"></script>
+</body>
+</html>

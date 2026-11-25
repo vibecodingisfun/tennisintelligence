@@ -23,7 +23,7 @@ export function lastName(name) {
   return parts[parts.length - 1] || name;
 }
 
-export const ORDER = ["drop", "fh", "fhpts", "bh", "serve", "first", "wtaDr", "wtaFh", "wtaBh", "wtaSv", "wtaFs"];
+export const ORDER = ["drop", "fh", "fhpts", "bh", "serve", "first", "dfbp", "wtaDr", "wtaFh", "wtaBh", "wtaSv", "wtaFs", "wtaDfbp"];
 
 export const COPY = {
   drop: {
@@ -42,7 +42,7 @@ export const COPY = {
     meta: (p) => `${p.charts} charted matches · ${p.drop_n} drop-shot points · ${n(p.freq, 2)} per 100 points · ${n(p.win, 1)}% won · ${n(p.won_per_100, 2)} won per 100 points`,
   },
   fh: {
-    group: "atp", title: "Forehands", caption: "Forehand Quality", file: "forehand-quality.png",
+    group: "atp", title: "Forehand speeds", caption: "Forehand Quality", file: "forehand-quality.png",
     blurb: "Published forehand speed against the points the forehand wins.",
     lede: "Drive forehands from men's charting, 40+ matches. Speed is a published average, not Match Charting. Current players use TennisViz 52-week ATP (slams out). Famous names without that series use GIG Australian Open Hawk-Eye. Tap a player.",
     x: "speed", y: "point_win", size: "winner_pct",
@@ -114,6 +114,22 @@ export const COPY = {
     ],
     always: MEN,
     meta: (p) => `${p.charts} charted matches · ${p.serve_pts} serve points · won ${n(p.first_won_pct, 1)}% when the first serve landed · first serve in ${n(p.first_in_pct, 1)}%`,
+  },
+  dfbp: {
+    group: "atp", title: "Double faults under break points", caption: "DF vs Break Points", file: "df-break-points.png",
+    blurb: "Career double-fault rate against the rate on break points faced.",
+    lede: "Current ATP Top 100 with charting, and at least 100 break points faced on serve. Both axes are double-fault %. The diagonal is equal rates. Above it means more double faults on break points; below means fewer. Tap one.",
+    x: "df_pct", y: "bp_df_pct", guide: "diag", equalScale: true, yDigits: 1,
+    xLabel: "Career double-fault % →", yLabel: "Break-point double-fault %",
+    defLede: "Career rates use every Match Charting Project men's overview row for the player. Break-point rates use KeyPointsServe rows labeled BP: serve points that were break points against the server (the returner's game point).",
+    defs: [
+      ["Horizontal axis", "Double faults / serve points, then × 100, from all charted matches in the overview (set = Total)."],
+      ["Vertical axis", "Double faults / break points faced on serve, then × 100, from KeyPointsServe BP rows. This is the opponent's game point on your serve, not set or match point."],
+      ["Diagonal", "The guide is y = x on a shared scale. A player on the line double-faults at the same rate on break points as overall."],
+      ["Who is included", "Latest ATP rank 1–100 within about four months of the newest match in the warehouse, and at least 100 charted break points faced. Not every Top 100 player has enough charting."],
+    ],
+    always: ["Jannik Sinner", "Carlos Alcaraz", "Novak Djokovic", "Daniil Medvedev", "Alexander Zverev"],
+    meta: (p) => `${p.charts} charted matches · rank ${p.rank ?? "—"} · career DF ${n(p.df_pct, 2)}% · break-point DF ${n(p.bp_df_pct, 2)}% · delta ${n(p.delta, 2)} · ${p.bp_pts} break points faced`,
   },
   wtaDr: {
     group: "wta", title: "WTA drop shots", caption: "WTA Dropshot Quality", file: "wta-dropshot-quality.png",
@@ -189,6 +205,22 @@ export const COPY = {
     always: WTA_ALWAYS,
     meta: (p) => `${p.charts} charted matches · ${p.serve_pts} serve points · won ${n(p.first_won_pct, 1)}% when the first serve landed · first serve in ${n(p.first_in_pct, 1)}%`,
   },
+  wtaDfbp: {
+    group: "wta", title: "WTA double faults under break points", caption: "WTA DF vs Break Points", file: "wta-df-break-points.png",
+    blurb: "Career double-fault rate against the rate on break points faced.",
+    lede: "Current WTA Top 50 with charting, and at least 100 break points faced on serve. Both axes are double-fault %. The diagonal is equal rates. Above it means more double faults on break points; below means fewer. Tap one.",
+    x: "df_pct", y: "bp_df_pct", guide: "diag", equalScale: true, yDigits: 1,
+    xLabel: "Career double-fault % →", yLabel: "Break-point double-fault %",
+    defLede: "Career rates use every Match Charting Project women's overview row for the player. Break-point rates use KeyPointsServe rows labeled BP: serve points that were break points against the server (the returner's game point).",
+    defs: [
+      ["Horizontal axis", "Double faults / serve points, then × 100, from all charted matches in the overview (set = Total)."],
+      ["Vertical axis", "Double faults / break points faced on serve, then × 100, from KeyPointsServe BP rows. This is the opponent's game point on your serve, not set or match point."],
+      ["Diagonal", "The guide is y = x on a shared scale. A player on the line double-faults at the same rate on break points as overall."],
+      ["Who is included", "Latest WTA rank 1–50 within about four months of the newest match in the warehouse, and at least 100 charted break points faced. Not every Top 50 player has enough charting."],
+    ],
+    always: ["Iga Swiatek", "Aryna Sabalenka", "Elena Rybakina", "Coco Gauff", "Jessica Pegula"],
+    meta: (p) => `${p.charts} charted matches · rank ${p.rank ?? "—"} · career DF ${n(p.df_pct, 2)}% · break-point DF ${n(p.bp_df_pct, 2)}% · delta ${n(p.delta, 2)} · ${p.bp_pts} break points faced`,
+  },
 };
 
 export const WTA_LEDE = "Active: current rank 50 or better, a match since 2025, and at least 20 charted matches. Plus anyone with 3 or more Grand Slam singles titles who has a charted match since October 2016. Na Li is included, except on drop shots, which needs 20 drop-shot points. The numbers use all of their charted matches. There is no WTA forehand-speed chart: the WTA does not publish players' average forehand speeds.";
@@ -198,6 +230,10 @@ export function pickIndex(id, players) {
     const al = players.findIndex((p) => /alcaraz/i.test(p.name));
     const fed = players.findIndex((p) => /federer/i.test(p.name));
     return al >= 0 ? al : (fed >= 0 ? fed : 0);
+  }
+  if (id === "wtaDfbp") {
+    const found = players.findIndex((p) => /swiatek/i.test(p.name));
+    return found >= 0 ? found : 0;
   }
   const pattern = id.startsWith("wta") ? /swiatek/i : /alcaraz/i;
   const found = players.findIndex((p) => pattern.test(p.name));

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data · Tennis Intelligence</title>
+<meta name="description" content="What Tennis Intelligence can draw: match warehouse and Match Charting — plus a placeholder for chart requests.">
+<meta name="theme-color" content="#f4efe4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20">
+</head>
+<body class="data-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="brand-block">
+    <a class="brand" href="../">
+      <svg class="mark" viewBox="0 0 54 30" aria-hidden="true">
+        <rect x="1" y="1" width="52" height="28"></rect>
+        <line x1="27" y1="1" x2="27" y2="29"></line>
+        <rect x="13" y="6" width="28" height="18"></rect>
+        <line x1="13" y1="15" x2="41" y2="15"></line>
+      </svg>
+      <span>Tennis Intelligence</span>
+    </a>
+    <p class="issue">A tennis data journal · main-tour matches · from 1 October 2016</p>
+  </div>
+  <nav class="site-nav" aria-label="Site">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="../radar/">Radar</a>
+    <a href="../styles/">Styles</a>
+    <a href="./" aria-current="page">Data</a>
+    <a href="../usta/">USTA</a>
+  </nav>
+</header>
+
+<main id="main" class="data-desk">
+  <section class="opener" aria-labelledby="data-title">
+    <p class="kicker">The journal · <span class="num">2</span> sources</p>
+    <h1 id="data-title">What we can <em>draw</em>.</h1>
+    <p class="pitch">These are the public datasets behind the charts. Read the edges, then ask for a plot that fits. Prefer a short note with the tour, the question, and which source you think it needs.</p>
+    <p class="pitch"><a href="#request">Request a chart ↓</a></p>
+  </section>
+
+  <section class="data-section" aria-labelledby="sources-title">
+    <h2 id="sources-title">Sources in plain language</h2>
+
+    <article class="data-card" id="source-warehouse">
+      <p class="kicker"><span class="num">01</span> Match warehouse</p>
+      <h3>TennisMyLife match rows</h3>
+      <p>One row per completed or retired main-tour (and related) match: winner and loser, surface, level, round, score, minutes when present, match-time ranks and points, and box-score serve/return lines when the feed has them. Local Elo and season aggregates are derived from this table.</p>
+      <ul class="data-meta">
+        <li><b>Credit</b> — TennisMyLife (<a href="https://stats.tennismylife.org">stats.tennismylife.org</a>), non-commercial use</li>
+        <li><b>Window</b> — analysis from <time datetime="2016-10-01">1 October 2016</time> through about <time datetime="2026-09-30">30 September 2026</time></li>
+        <li><b>On the site</b> — <a href="../topics/">Topics</a> (hot-topic chapters)</li>
+      </ul>
+      <div class="data-can">
+        <p class="kicker">We can draw</p>
+        <ul>
+          <li>Win rates, Elo, and age curves for named players inside the window</li>
+          <li>Season counts: retirements, walkovers, top-10 churn, load for year-end top 20</li>
+          <li>Slam / Masters paths, seed upsets, ace and hold heatmaps by event</li>
+          <li>ATP and WTA side by side when both tours have the fields</li>
+        </ul>
+        <p class="kicker">We cannot (yet)</p>
+        <ul>
+          <li>Career totals that need pre-2016 peaks (Big 3 primes sit partly outside)</li>
+          <li>Official year-end rankings lists (we use late-season match-time ranks as a proxy)</li>
+          <li>Shot-by-shot tactics — that is Match Charting, below</li>
+          <li>Live in-progress scores or betting odds</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="data-card" id="source-charting">
+      <p class="kicker"><span class="num">02</span> Match Charting</p>
+      <h3>Jeff Sackmann point-level charts</h3>
+      <p>Volunteer-charted matches with shot types, serve direction, rally length, winners and unforced errors. Linked to warehouse matches when names and dates align. Coverage is a sample of the tour, denser for top players, not every main-draw match.</p>
+      <ul class="data-meta">
+        <li><b>Credit</b> — <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Jeff Sackmann Match Charting Project</a>, CC BY-NC-SA 4.0</li>
+        <li><b>Window</b> — charted matches in the same analysis era; link rate roughly 95% ATP / 89% WTA of charted rows in-window</li>
+        <li><b>On the site</b> — <a href="../plots/">Plots</a>, <a href="../radar/">Radar</a>, <a href="../styles/">Styles</a></li>
+      </ul>
+      <div class="data-can">
+        <p class="kicker">We can draw</p>
+        <ul>
+          <li>Drop-shot frequency and success, forehand / backhand quality scatters</li>
+          <li>Serve patterns (free points, first-serve in/won) for charted players</li>
+          <li>Style radars and attacker / grinder labels when charted volume is high enough</li>
+          <li>Men’s forehand speed when blended with published TennisViz / GIG Hawk-Eye averages</li>
+        </ul>
+        <p class="kicker">We cannot (yet)</p>
+        <ul>
+          <li>Every player on tour — only those with enough charted matches</li>
+          <li>WTA forehand speed chapter (no published speed table wired yet)</li>
+          <li>Frame-by-frame tracking or Hawk-Eye trajectories from the ATP/WTA feeds</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="data-section" aria-labelledby="schema-title">
+    <h2 id="schema-title">Schema (expand)</h2>
+    <p class="lede">Field groups, not a full dump. Enough to judge whether a request fits.</p>
+
+    <details class="data-schema">
+      <summary>Match warehouse — tables and fields</summary>
+      <div class="schema-body">
+        <p><b>matches</b> — grain: one match. Keys: <code>match_id</code>, <code>event_key</code>, <code>winner_key</code>, <code>loser_key</code>. Identity: <code>tour</code>, <code>tier</code>, <code>tourney_*</code>, <code>surface</code>, <code>indoor</code>, <code>level_norm</code>, <code>round</code> / <code>round_order</code>, <code>best_of</code>, <code>score</code>, <code>minutes</code>. Players: names, hand, height, IOC, age, seed, entry, match-time <code>*_rank</code> / <code>*_rank_points</code>. Box stats when present: aces, doubles, first/second serve in and won, return, breakpoints, etc.</p>
+        <p><b>players</b> — bio and window span: <code>player_key</code>, hand, backhand, height, DOB, IOC, first/last match in window.</p>
+        <p><b>match_elo</b> — per player per match: <code>elo_pre</code>, <code>surface_elo_pre</code>, post updates (local K=32, start 1500).</p>
+        <p><b>player_match_features</b> — leak-safe pre-match row per side: ranks, Elo diffs, 52-week win %, H2H, rest, event form (from 2016-10-01).</p>
+        <p><b>player_style</b> / <b>playing_style</b> — season aggregates and style labels (serve/return/safety/winners); charting columns fill in when linked volume is high.</p>
+        <p><b>charting_linked</b> — <code>chart_match_id</code> ↔ warehouse <code>match_id</code> with date offset.</p>
+        <p class="note">Caveats: score-inconsistent matches stay in <code>matches</code> but skip Elo/features; some 2026 rows lack a player id; not an official ATP/WTA feed.</p>
+      </div>
+    </details>
+
+    <details class="data-schema">
+      <summary>Match Charting — files we use</summary>
+      <div class="schema-body">
+        <p>Raw CSVs from the project (not fully loaded into DuckDB for plotting): match index, Overview stats, ShotTypes, ServeBasics, ServeDirection, Rally totals, and related aggregates. Plots join on charted player identity + aliases, then attach warehouse ranks when available.</p>
+        <p>Extra published inputs for men’s forehand speed only: TennisViz 52-week averages and GIG Australian Open Hawk-Eye figures (curated in code).</p>
+        <p class="note">Style / radar gates typically want dozens of charted matches (often 40+) before charting-enriched metrics are trusted.</p>
+      </div>
+    </details>
+
+  </section>
+
+  <section class="data-section request-board" id="request" aria-labelledby="request-title">
+    <h2 id="request-title">Request a chart</h2>
+    <p class="lede">Public board — short note with the tour, the question, and which source you think it needs. Or email <a href="mailto:admin@tennisintelligence.org?subject=Chart%20request">admin@tennisintelligence.org</a>.</p>
+
+    <form id="request-form" class="request-form" novalidate>
+      <label>
+        <span>Your name (optional)</span>
+        <input type="text" name="name" maxlength="80" autocomplete="nickname" placeholder="Anonymous">
+      </label>
+      <label class="hp" aria-hidden="true">
+        <span>Website</span>
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </label>
+      <label>
+        <span>Chart idea</span>
+        <textarea name="body" rows="4" maxlength="2000" required placeholder="Tour, question, and which source you think it needs…"></textarea>
+      </label>
+      <p class="actions">
+        <button type="submit" class="button save" id="request-submit">Post request</button>
+        <span class="status" id="request-status" role="status"></span>
+      </p>
+    </form>
+
+    <div class="request-list-head">
+      <h3 class="request-list-title">Recent requests</h3>
+      <p class="board-admin-bar">
+        <button type="button" class="text-btn" id="board-admin">Admin</button>
+        <span class="status" id="board-admin-status" role="status"></span>
+      </p>
+    </div>
+    <p class="hint board-delete-hint">Authors can delete their own posts from the same browser. Admin can delete any post.</p>
+    <div id="request-list" class="request-list" aria-live="polite">
+      <p class="hint">Loading…</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="credit">Match data: TennisMyLife (non-commercial). Charting: <a href="https://github.com/JeffSackmann/tennis_MatchChartingProject">Jeff Sackmann Match Charting Project</a>. Support: <a href="mailto:admin@tennisintelligence.org">admin@tennisintelligence.org</a>.</p>
+  <nav class="site-nav" aria-label="Footer">
+    <a href="../">Home</a>
+    <a href="../plots/">Plots</a>
+    <a href="../topics/">Topics</a>
+    <a href="../radar/">Radar</a>
+    <a href="../styles/">Styles</a>
+    <a href="./" aria-current="page">Data</a>
+    <a href="../usta/">USTA</a>
+  </nav>
+</footer>
+<script type="module" src="../assets/board.js?v=2"></script>
+</body>
+</html>

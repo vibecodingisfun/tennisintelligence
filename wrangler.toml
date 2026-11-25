@@ -1,0 +1,10 @@
+# Cloudflare Pages + Functions config for tennisintelligence.org
+name = "tennisintelligence"
+compatibility_date = "2026-10-18"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tennisintelligence-board"
+database_id = "bc4bf78d-f648-4d88-af55-da67e5c22a91"
+preview_database_id = "DB"

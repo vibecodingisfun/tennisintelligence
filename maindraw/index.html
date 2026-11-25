@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MainDraw — junior tennis app: roster rankings, UTR, scoring, meals</title>
+  <meta name="description" content="MainDraw is an unofficial app for junior tennis parents on iPhone and Android. Look up National Ranking, WTN and UTR on a USTA Players list, keep tournaments on a calendar, score matches point by point, and score match-day meals.">
+  <meta name="apple-itunes-app" content="app-id=6810411828">
+  <link rel="canonical" href="https://tennisintelligence.org/maindraw/">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tennis Intelligence">
+  <meta property="og:title" content="MainDraw — the junior tennis parent's app">
+  <meta property="og:description" content="Look up National Ranking and UTR on a USTA Players list, score the match, and plan the match-day meal. iPhone and Android.">
+  <meta property="og:url" content="https://tennisintelligence.org/maindraw/">
+  <meta property="og:image" content="https://tennisintelligence.org/maindraw/assets/roster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "MainDraw",
+        "url": "https://tennisintelligence.org/maindraw/",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "iOS, Android",
+        "installUrl": [
+          "https://apps.apple.com/us/app/maindraw/id6810411828",
+          "https://play.google.com/store/apps/details?id=com.botao.maindraw"
+        ],
+        "image": "https://tennisintelligence.org/maindraw/assets/icon.png",
+        "description": "Unofficial app for junior tennis parents. Reads a USTA Players list and looks up National Ranking, WTN and UTR, keeps tournaments on a calendar, scores matches point by point, scores match-day meals, and gives juniors a tennis buddy called Fuzz. Not affiliated with USTA or Universal Tennis."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is MainDraw?",
+            "acceptedAnswer": { "@type": "Answer", "text": "An unofficial app for junior tennis parents on iPhone, iPad and Android. It reads a USTA tournament Players list and looks up National Ranking, WTN and UTR, keeps tournaments on a calendar, scores matches point by point, scores match-day meals, and gives your child a tennis buddy called Fuzz." } },
+          { "@type": "Question", "name": "Is MainDraw affiliated with USTA or Universal Tennis?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. MainDraw is not affiliated with, endorsed by, or sponsored by USTA or Universal Tennis. You use your own accounts on those sites, and their terms apply." } },
+          { "@type": "Question", "name": "What does it cost?",
+            "acceptedAnswer": { "@type": "Answer", "text": "MainDraw is free to download. Browsing rosters, bookmarks and Demo Mode are free. Look Up, the tournament calendar, Scorecard, Match Meal and Fuzz are part of the MainDraw subscription. The App Store or Google Play shows the plans and the price for your country before you confirm." } },
+          { "@type": "Question", "name": "What do I see when I tap a National Ranking number?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The singles and doubles that count for that rank, up to six of each. The last row of each group is the lowest score that counts. Tap a level name to open that tournament." } },
+          { "@type": "Question", "name": "What happens to a meal photo?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Photo scoring is optional and needs a parent to agree first. The photo is sent to the scoring service, used to score the meal, and not kept. Barcode, menu and typed scoring work without a photo." } },
+          { "@type": "Question", "name": "Where does my data go?",
+            "acceptedAnswer": { "@type": "Answer", "text": "There are no ads, no analytics and no MainDraw account. USTA and Universal Tennis sign-ins, matches, notes and Fuzz stay on your phone. Look Up talks to USTA and Universal Tennis directly from the phone." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/icon.png" width="36" height="36" alt="">
+      <span>MainDraw</span>
+    </a>
+    <nav>
+      <a href="#how">Look Up</a>
+      <a href="#score">Scorecard</a>
+      <a href="#meal">Match Meal</a>
+      <a href="#fuzz">Fuzz</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#get">Get the app</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">For junior tennis parents and coaches</p>
+        <h1>Read the roster.<br>Score the match.</h1>
+        <p class="lede">
+          MainDraw looks up National Ranking, WTN and UTR on a USTA Players
+          list, keeps your tournaments on a calendar, scores the match point
+          by point, and helps plan the meal before it.
+        </p>
+        <div class="cta-row" id="get">
+          <div class="store-row">
+            <a class="store-badge" href="https://apps.apple.com/us/app/maindraw/id6810411828">
+              <img src="assets/app-store-badge-white.svg" width="168" height="56" alt="Download on the App Store">
+            </a>
+            <a class="store-play" href="https://play.google.com/store/apps/details?id=com.botao.maindraw">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5v17l14-8.5z"/></svg>
+              <span><small>Get it on</small><strong>Google Play</strong></span>
+            </a>
+          </div>
+          <p class="cta-note">Free to download · iPhone, iPad and Android</p>
+        </div>
+        <p class="disclaimer">
+          Unofficial tool. Not affiliated with, endorsed by, or sponsored by
+          USTA or Universal Tennis.
+        </p>
+      </div>
+
+      <div class="hero-stage" aria-hidden="false">
+        <figure class="device tablet">
+          <img src="assets/roster.jpg" width="800" height="1066" alt="USTA Players list annotated with National Ranking, singles UTR, doubles UTR, and match confidence">
+        </figure>
+        <figure class="device phone">
+          <img src="assets/score.jpg" width="320" height="692" alt="Scorecard live scoring page with player pads, Fault, and Ace">
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="how">
+      <header class="section-head">
+        <p class="eyebrow">Look Up</p>
+        <h2>Four taps from search to rankings</h2>
+      </header>
+      <ol class="draw">
+        <li>
+          <span class="seed">1</span>
+          <h3>Find the event</h3>
+          <p>USTA Search opens Find Tournaments with Sort &amp; Filter ready. Search by location, dates and division, and save the setup when you will run it again.</p>
+        </li>
+        <li>
+          <span class="seed">2</span>
+          <h3>Open Players</h3>
+          <p>Open the tournament, then its Players page. Read needs the entry list on screen.</p>
+        </li>
+        <li>
+          <span class="seed">3</span>
+          <h3>Read the roster</h3>
+          <p>One tap reads the names. Singles stay one player per row; doubles teams stay paired.</p>
+        </li>
+        <li>
+          <span class="seed">4</span>
+          <h3>Look Up</h3>
+          <p>National Ranking, WTN and UTR land in columns you can sort. Tap a ranking number for the results that count, or a UTR number for that player's profile. Sign in to Universal Tennis with your own account once.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="band alt" id="score">
+      <header class="section-head">
+        <p class="eyebrow">Scorecard</p>
+        <h2>Mark every point, then keep what matters</h2>
+      </header>
+      <div class="score-split">
+        <ol class="draw score-steps">
+          <li>
+            <span class="seed">1</span>
+            <h3>Start the match</h3>
+            <p>Names, first server, sets and scoring format. Scoring stays on its own page while you play.</p>
+          </li>
+          <li>
+            <span class="seed">2</span>
+            <h3>Tap the winner</h3>
+            <p>Tap a player for each point. Fault, Ace, Undo and End match sit on the same page. Mark the shot if you want: winner or error, stroke, direction, depth and rally length.</p>
+          </li>
+          <li>
+            <span class="seed">3</span>
+            <h3>Write the notes</h3>
+            <p>After the match, keep notes on the opponent: strengths, weaknesses, and what to try next time. Dictate with the microphone if typing is slow.</p>
+          </li>
+          <li>
+            <span class="seed">4</span>
+            <h3>Read the match</h3>
+            <p>Stats, a breakdown by shot, and a point-by-point log open from the same match.</p>
+          </li>
+        </ol>
+        <div class="score-phones" aria-hidden="false">
+          <figure class="device phone score-phone">
+            <img src="assets/point.jpg" width="320" height="692" alt="Point sheet for marking stroke, direction, and point result">
+          </figure>
+          <figure class="device phone score-phone score-phone-back">
+            <img src="assets/notes.jpg" width="320" height="692" alt="Match notes with score, weather, and reflection fields">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="meal">
+      <header class="section-head">
+        <p class="eyebrow">Match Meal</p>
+        <h2>What to eat before, between and after</h2>
+      </header>
+      <ul class="tabs">
+        <li>
+          <h3>Score a meal</h3>
+          <p>Scan a barcode, pick from a restaurant menu, or type what is on the plate. MainDraw scores it for a junior on match day.</p>
+        </li>
+        <li>
+          <h3>Score a photo</h3>
+          <p>Take or choose a photo after a parent agrees. One photo a day. The photo is used to score the meal and is not kept.</p>
+        </li>
+        <li>
+          <h3>Plan match day</h3>
+          <p>A meal plan around the match time, with reminders on your phone.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="band alt" id="calendar">
+      <header class="section-head">
+        <p class="eyebrow">Tournament calendar</p>
+        <h2>Every entry deadline in one place</h2>
+      </header>
+      <ul class="tabs">
+        <li>
+          <h3>Save tournaments</h3>
+          <p>Save from search results with one tap and see them by month. Upcoming lists what is next, with the venue and when entries close.</p>
+        </li>
+        <li>
+          <h3>Deadline reminders</h3>
+          <p>Get a reminder before an entry deadline. It is scheduled on your phone.</p>
+        </li>
+        <li>
+          <h3>Family players</h3>
+          <p>Accounts switches between family players and opens each player's Upcoming and Completed schedule.</p>
+        </li>
+        <li>
+          <h3>UTR on the draw</h3>
+          <p>After Look Up, the tournament draw shows Singles UTR or Doubles UTR beside each player you looked up.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="band" id="fuzz">
+      <header class="section-head">
+        <p class="eyebrow">Fuzz</p>
+        <h2>A tennis buddy for your child</h2>
+        <p>Hatch Fuzz together. Fuzz grows from matches and practice, and a win or a loss counts the same.</p>
+      </header>
+      <ul class="tabs">
+        <li>
+          <h3>Before a match</h3>
+          <p>Breathe with Fuzz, check in on feelings, and pick a cue word for a match-day cue card.</p>
+        </li>
+        <li>
+          <h3>After a loss</h3>
+          <p>Talk it out with Fuzz and keep good moments in a highlight jar.</p>
+        </li>
+        <li>
+          <h3>Safe by design</h3>
+          <p>No account, no ads, no chat. Fuzz keeps its data on the device, and a parent check guards hatching and settings.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="band alt" id="try">
+      <div class="split">
+        <div>
+          <p class="eyebrow">No accounts required</p>
+          <h2>Try Demo on the Home tab</h2>
+          <p>
+            Demo Mode opens a sample roster with rankings already filled in.
+            Tap Read, then Look Up, and see the columns without a USTA or
+            Universal Tennis sign-in.
+          </p>
+        </div>
+        <dl class="price">
+          <div>
+            <dt>Download</dt>
+            <dd>Free</dd>
+          </div>
+          <div>
+            <dt>Subscription</dt>
+            <dd>Look Up, calendar, Scorecard, Match Meal, Fuzz</dd>
+          </div>
+          <div>
+            <dt>Price</dt>
+            <dd>Shown by the App Store or Google Play for your country</dd>
+          </div>
+          <div>
+            <dt>Always free</dt>
+            <dd>Browse, bookmarks, Demo</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band" id="faq">
+      <header class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>What parents usually ask</h2>
+        <p>For how USTA points, the best 6, bonus points and seeding work, see the <a href="/usta/">USTA junior points tables and rankings FAQ</a>.</p>
+      </header>
+      <div class="faq">
+        <details open>
+          <summary>What is MainDraw?</summary>
+          <p>An unofficial app for junior tennis parents on iPhone, iPad and Android. It reads a USTA tournament Players list and looks up National Ranking, WTN and UTR, keeps tournaments on a calendar, scores matches point by point, scores match-day meals, and gives your child a tennis buddy called Fuzz.</p>
+        </details>
+        <details>
+          <summary>Is this an official USTA or UTR app?</summary>
+          <p>No. MainDraw is not affiliated with, endorsed by, or sponsored by USTA or Universal Tennis. You use your own accounts on those sites, and their terms apply.</p>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <p>MainDraw is free to download. Browsing rosters, bookmarks and Demo Mode are free. Look Up, the tournament calendar, Scorecard, Match Meal and Fuzz are part of the MainDraw subscription. The App Store or Google Play shows the plans and the price for your country before you confirm.</p>
+        </details>
+        <details>
+          <summary>What do I see when I tap a National Ranking number?</summary>
+          <p>The singles and doubles that count for that rank, up to six of each. The last row of each group is the lowest score that counts. Tap a level name to open that tournament.</p>
+        </details>
+        <details>
+          <summary>What happens to a meal photo?</summary>
+          <p>Photo scoring is optional and needs a parent to agree first. The photo is sent to the scoring service, used to score the meal, and not kept. Barcode, menu and typed scoring work without a photo.</p>
+        </details>
+        <details>
+          <summary>Where does my data go?</summary>
+          <p>There are no ads, no analytics and no MainDraw account. USTA and Universal Tennis sign-ins, matches, notes and Fuzz stay on your phone. Look Up talks to USTA and Universal Tennis directly from the phone. See the <a href="https://vibecodingisfun.github.io/maindraw_privacy/">privacy policy</a>.</p>
+        </details>
+        <details>
+          <summary>How do I get help or cancel?</summary>
+          <p>Email <a href="mailto:maindraw.support@gmail.com">maindraw.support@gmail.com</a>. On iPhone, manage or cancel in Settings → your name → Subscriptions. On Android, in Google Play → Payments &amp; subscriptions.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-brand">
+      <img src="assets/icon.png" width="40" height="40" alt="">
+      <div>
+        <strong>MainDraw</strong>
+        <p>Unofficial junior tennis app for iPhone, iPad and Android.</p>
+        <p class="maker">From <a href="/">Tennis Intelligence</a>.</p>
+      </div>
+    </div>
+    <ul>
+      <li><a href="https://apps.apple.com/us/app/maindraw/id6810411828">App Store</a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.botao.maindraw">Google Play</a></li>
+      <li><a href="/usta/">USTA junior rankings</a></li>
+      <li><a href="https://vibecodingisfun.github.io/maindraw_privacy/">Privacy Policy</a></li>
+      <li><a href="https://vibecodingisfun.github.io/maindraw_privacy/terms.html">Terms of Use</a></li>
+      <li><a href="mailto:maindraw.support@gmail.com">Support</a></li>
+    </ul>
+    <p class="fine">
+      MainDraw is unofficial and is not affiliated with USTA or Universal Tennis.
+    </p>
+  </footer>
+</body>
+</html>
